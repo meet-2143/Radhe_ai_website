@@ -84,14 +84,14 @@ const Services = () => {
 
             <section className="process-timeline" style={{ background: 'hsla(0, 0%, 100%, 0.01)' }}>
                 <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '4rem' }}>[ 02 ] OUR PROCESS</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 300px), 1fr))', gap: '2rem' }}>
                     {[
                         { icon: <Search />, title: 'Discovery', desc: 'Understanding your goals and technical requirements.' },
                         { icon: <Layers />, title: 'Architecture', desc: 'Designing the blueprint for a scalable solution.' },
                         { icon: <Cpu />, title: 'Development', desc: 'Agile sprints with continuous integration and testing.' },
                         { icon: <Repeat />, title: 'Optimization', desc: 'Monitoring and refining for peak performance.' }
                     ].map((step, idx) => (
-                        <div key={idx} className="process-step glass-card" style={{ padding: '2.5rem' }}>
+                        <div key={idx} className="process-step glass-card" style={{ padding: 'clamp(1.5rem, 5vw, 2.5rem)' }}>
                             <div style={{ color: 'hsl(var(--pc))', marginBottom: '1.5rem' }}>{step.icon}</div>
                             <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{step.title}</h4>
                             <p style={{ opacity: 0.5, fontSize: '0.9rem' }}>{step.desc}</p>
@@ -111,8 +111,8 @@ const Services = () => {
                 </div>
             </section>
 
-            <section style={{ textAlign: 'center', background: 'hsl(var(--card))' }}>
-                <h3 style={{ fontSize: '3rem', marginBottom: '2rem' }}>Flexible <span className="gradient-text">Pricing Models</span></h3>
+            <section style={{ textAlign: 'center', background: 'hsl(var(--card))', padding: '100px 5%' }}>
+                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '2rem', lineHeight: '1.1' }}>Flexible <span className="gradient-text">Pricing Models</span></h3>
                 <p style={{ opacity: 0.6, maxWidth: '600px', margin: '0 auto 3rem' }}>
                     We offer tailored engagement models including Fixed-Price, Time & Material,
                     and Dedicated Development Teams.

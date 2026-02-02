@@ -1,5 +1,26 @@
 export const projects = [
     {
+        id: "fintech-scaling",
+        title: "Scaling Fintech Infrastructure",
+        industry: "Fintech",
+        shortDesc: "Architecting for 10M+ concurrent users with 99.999% uptime.",
+        description: "A comprehensive overhaul of a Tier 1 financial institution's backend, transitioning from legacy monoliths to a highly-resilient, event-driven microservices architecture.",
+        tech: ["Kubernetes", "Kafka", "Go", "GCP"],
+        color: "linear-gradient(135deg, #1e40af, #3b82f6)",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+        caseStudy: {
+            problem: "A major financial platform was collapsing under the weight of 2M concurrent users, with database deadlocks and API timeouts becoming a daily occurrence during market open.",
+            identifiedProblem: "System audit revealed a 'Death Star' architecture—tightly coupled services and a massive central database that created a single point of failure and extreme horizontal scaling bottlenecks.",
+            solution: "We re-architected the system using a cell-based infrastructure. We implemented event-streaming via Kafka to decouple transactions and deployed a globally distributed CockroachDB cluster for zero-latency data consistency across regions.",
+            impact: "The infrastructure now comfortably handles 10M+ concurrent transactions. Uptime increased to five-nines (99.999%) and operational costs were reduced by 40% through intelligent resource orchestration.",
+            metrics: [
+                { label: "Concurrent Users", value: "10M+" },
+                { label: "Uptime", value: "99.999%" },
+                { label: "DB Latency", value: "< 5ms" }
+            ]
+        }
+    },
+    {
         id: "neural_trade",
         title: "NeuralTrade V3",
         industry: "Fintech",
@@ -27,7 +48,7 @@ export const projects = [
         description: "An AI-driven logistics engine that optimizes global shipping routes in real-time. It processes millions of data points, including weather, port congestion, and fuel prices, to ensure maximum efficiency.",
         tech: ["React", "Node.js", "PostgreSQL", "Graph Neural Networks"],
         color: "linear-gradient(135deg, #111827, #374151)",
-        image: "src/assets/projects/logistics.png",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
             problem: "A global shipping leader was struggling with inefficient routing, with 15% of their container capacity remaining unutilized or traveling redundant paths due to static scheduling.",
             solution: "We developed a Graph Neural Network (GNN) that treats the global shipping network as a dynamic system. It suggests real-time re-routing and load balancing based on predictive demand spikes.",
@@ -150,7 +171,7 @@ export const projects = [
         description: "Automated local SEO management for multi-unit home service brands, optimizing Google Business Profiles and local citations at scale.",
         tech: ["Go", "React", "Google Maps API", "PostgreSQL"],
         color: "linear-gradient(135deg, #3b82f6, #2563eb)",
-        image: "/src/assets/projects/logistics.png",
+        image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
             problem: "A national plumbing franchise was invisible in local 'near me' searches despite having 200+ physical locations.",
             identifiedProblem: "NAP (Name, Address, Phone) inconsistency across hundreds of directories was confusing search algorithms and depressing local rankings.",

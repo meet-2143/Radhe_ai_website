@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, Suspense, lazy } from 'react'
+import React, { useEffect, useRef, Suspense, lazy, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
+import { Menu, X } from 'lucide-react'
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'))
@@ -22,20 +23,48 @@ const ScrollToTop = () => {
     return null
 }
 
-const Navbar = () => (
+const Navbar = ({ onToggle, isOpen }) => (
     <nav>
-        <div className="nav-links">
-            <Link to="/" style={{ fontWeight: '800' }}>RADHE<span className="gradient-text">AI</span></Link>
-            <div style={{ display: 'flex', gap: '2rem' }}>
+        <div className="nav-container shadow-pill">
+            <Link to="/" style={{ fontSize: '1.1rem', fontWeight: '900', textDecoration: 'none', color: 'white', letterSpacing: '-0.02em' }}>
+                RADHE<span className="gradient-text">AI</span>
+            </Link>
+
+            <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/about">About Us</Link>
                 <Link to="/services">Services</Link>
                 <Link to="/portfolio">Work</Link>
                 <Link to="/contact">Contact</Link>
             </div>
-            <Link to="/contact" className="btn btn-primary" style={{ padding: '0.5rem 1.25rem', textDecoration: 'none' }}>Get Started</Link>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <Link to="/contact" className="btn btn-primary" style={{
+                    padding: '0.6rem 1.5rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '700',
+                    borderRadius: '100px'
+                }}>
+                    Get Started
+                </Link>
+
+                <button className="menu-toggle" onClick={onToggle}>
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </div>
         </div>
     </nav>
+)
+
+const MobileNav = ({ isOpen, onToggle }) => (
+    <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
+        <Link to="/" onClick={onToggle}>Home</Link>
+        <Link to="/about" onClick={onToggle}>About Us</Link>
+        <Link to="/services" onClick={onToggle}>Services</Link>
+        <Link to="/portfolio" onClick={onToggle}>Work</Link>
+        <Link to="/contact" onClick={onToggle}>Contact</Link>
+        <button className="btn btn-primary" onClick={() => { onToggle(); window.location.href = '/contact' }}>Get Started</button>
+    </div>
 )
 
 const Footer = () => (
@@ -100,6 +129,9 @@ const Footer = () => (
 const App = () => {
     useSmoothScroll()
     const cursorRef = useRef(null)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
     useEffect(() => {
         // Custom Cursor Logic
@@ -136,7 +168,8 @@ const App = () => {
             </div>
             <div ref={cursorRef} className="custom-cursor" />
 
-            <Navbar />
+            <Navbar onToggle={toggleMenu} isOpen={isMenuOpen} />
+            <MobileNav isOpen={isMenuOpen} onToggle={toggleMenu} />
 
             <Suspense fallback={<div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Loading...</div>}>
                 <Routes>

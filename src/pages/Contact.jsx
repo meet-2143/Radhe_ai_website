@@ -76,9 +76,9 @@ const Contact = () => {
                 </p>
             </section>
 
-            <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem' }}>
+            <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 500px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', padding: '80px 5%' }}>
                 <div className="reveal">
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Let's start a <br /> <span className="gradient-text">Conversation</span></h2>
+                    <h2 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '2rem', lineHeight: '1.1' }}>Let's start a <br /> <span className="gradient-text">Conversation</span></h2>
                     <p style={{ opacity: 0.6, marginBottom: '3rem' }}>
                         Whether you're looking for a consultation, a quote, or just want to
                         say hello, our team is ready to assist you.
@@ -109,7 +109,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="reveal glass-card" style={{ padding: '3rem' }}>
+                <div className="reveal glass-card" style={{ padding: 'clamp(1.5rem, 5vw, 3rem)' }}>
                     {status === 'success' ? (
                         <div style={{ textAlign: 'center', padding: '2rem' }}>
                             <CheckCircle size={64} color="hsl(var(--sc))" style={{ marginBottom: '2rem' }} />
@@ -119,7 +119,7 @@ const Contact = () => {
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                     <label style={{ fontSize: '0.8rem', opacity: 0.6 }}>Full Name</label>
                                     <input

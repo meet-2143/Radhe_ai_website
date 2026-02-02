@@ -56,7 +56,7 @@ const ProjectDetail = () => {
                 <Link to="/portfolio" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--pc))', textDecoration: 'none', marginBottom: '3rem', fontWeight: 'bold' }}>
                     <ArrowLeft size={20} /> BACK TO PORTFOLIO
                 </Link>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 500px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
                     <div>
                         <div className="reveal" style={{ fontSize: '0.9rem', color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1rem' }}>{project.industry.toUpperCase()}</div>
                         <h1 className="reveal" style={{ fontSize: 'clamp(3rem, 5vw, 6rem)', marginBottom: '2rem', lineHeight: '1' }}>{project.title}</h1>
@@ -67,7 +67,7 @@ const ProjectDetail = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="reveal glass-card" style={{ padding: '0', overflow: 'hidden', height: '500px', border: 'none' }}>
+                    <div className="reveal glass-card" style={{ padding: '0', overflow: 'hidden', height: 'clamp(300px, 50vh, 500px)', border: 'none' }}>
                         <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                 </div>
@@ -77,7 +77,7 @@ const ProjectDetail = () => {
             <section style={{ background: 'hsla(var(--pc) / 0.05)', padding: '100px 5%' }}>
                 <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
                     <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '2rem' }}>[ 01 ] CASE STUDY PREVIEW</h2>
-                    <h3 className="reveal" style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>How we delivered <span className="gradient-text">exceptional value</span> to {project.title}.</h3>
+                    <h3 className="reveal" style={{ fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', marginBottom: '3rem' }}>How we delivered <span className="gradient-text">exceptional value</span> to {project.title}.</h3>
                     <div className="metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
                         {project.caseStudy.metrics.map((m, i) => (
                             <div key={i} className="metric-card glass-card" style={{ padding: '2.5rem' }}>
@@ -138,9 +138,9 @@ const ProjectDetail = () => {
                     <div className="reveal glass-card" style={{ marginTop: '6rem', padding: '4rem', background: 'hsl(var(--card))' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                             <Cpu color="hsl(var(--pc))" size={32} />
-                            <h4 style={{ fontSize: '1.5rem' }}>CORE TECHNOLOGY STACK</h4>
+                            <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)' }}>CORE TECHNOLOGY STACK</h4>
                         </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.5rem' }}>
                             {project.tech.map((t, i) => (
                                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', opacity: 0.8 }}>
                                     <CheckCircle size={20} color="hsl(var(--sc))" /> {t}
@@ -153,8 +153,8 @@ const ProjectDetail = () => {
 
             {/* CTA */}
             <section style={{ textAlign: 'center', paddingBottom: '160px' }}>
-                <h3 style={{ fontSize: '3rem', marginBottom: '2rem' }}>Want results like <span className="gradient-text">these?</span></h3>
-                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.5rem 3rem' }}>LET'S BUILD YOUR PROJECT</Link>
+                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '2rem' }}>Want results like <span className="gradient-text">these?</span></h3>
+                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>LET'S BUILD YOUR PROJECT</Link>
             </section>
         </main>
     )

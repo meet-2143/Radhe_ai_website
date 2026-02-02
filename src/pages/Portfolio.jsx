@@ -51,7 +51,7 @@ const Portfolio = () => {
                     ))}
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 450px), 1fr))', gap: 'clamp(1rem, 5vw, 3rem)' }}>
                     {filteredProjects.map((project, idx) => (
                         <div key={idx} className="reveal glass-card" style={{ padding: '0', overflow: 'hidden' }}>
                             <div style={{
@@ -75,7 +75,7 @@ const Portfolio = () => {
                                     padding: '2rem'
                                 }}>
                                     <div style={{ fontSize: '0.75rem', color: 'hsl(var(--sc))', fontWeight: 'bold' }}>{project.industry.toUpperCase()}</div>
-                                    <h3 style={{ fontSize: '2rem', color: 'white' }}>{project.title}</h3>
+                                    <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', color: 'white' }}>{project.title}</h3>
                                 </div>
                                 <div style={{ position: 'absolute', top: '2rem', right: '2rem' }}>
                                     <ArrowUpRight color="white" size={32} />
@@ -111,13 +111,22 @@ const Portfolio = () => {
 
             <section style={{ textAlign: 'center' }}>
                 <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '2rem' }}>[ CASE STUDIES ]</h2>
-                <h3 style={{ fontSize: '3rem', marginBottom: '3rem' }}>Deep Dives into <span className="gradient-text">Success.</span></h3>
-                <div className="glass-card" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', marginBottom: '3rem' }}>Deep Dives into <span className="gradient-text">Success.</span></h3>
+                <div className="glass-card reveal" style={{
+                    maxWidth: '1000px',
+                    margin: '0 auto',
+                    textAlign: 'left',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '2rem',
+                    alignItems: 'center',
+                    overflow: 'hidden'
+                }}>
                     <div style={{ padding: '3rem' }}>
                         <div style={{ fontSize: '0.8rem', opacity: 0.5 }}>LATEST PUBLICATION</div>
                         <h4 style={{ fontSize: '1.5rem', margin: '1rem 0' }}>Scaling Fintech Infrastructure to 10M Concurrent Users</h4>
                         <p style={{ opacity: 0.6 }}>A comprehensive breakdown of how we optimized the backend architecture for a Tier 1 financial institution.</p>
-                        <Link to="/project/neural-trade" className="btn btn-secondary" style={{ marginTop: '2.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+                        <Link to="/project/fintech-scaling" className="btn btn-secondary" style={{ marginTop: '2.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
                             Read Case Study <ExternalLink size={16} />
                         </Link>
                     </div>

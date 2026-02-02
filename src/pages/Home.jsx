@@ -85,7 +85,7 @@ const Home = () => {
             {/* Featured Projects */}
             <section id="work" style={{ background: 'hsla(0, 0%, 100%, 0.02)' }}>
                 <h2 className="reveal-on-scroll" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '4rem' }}>[ 02 ] FEATURED WORK</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 40vw, 400px), 1fr))', gap: '2rem' }}>
                     {projects.slice(0, 2).map((project, idx) => (
                         <div key={idx} className="reveal-on-scroll glass-card" style={{ padding: '0', overflow: 'hidden' }}>
                             <div style={{ height: '300px', background: project.color, overflow: 'hidden' }}>
@@ -112,8 +112,11 @@ const Home = () => {
 
             {/* Testimonials */}
             <section id="testimonials">
-                <h2 className="reveal-on-scroll" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '1rem' }}>[ 03 ] REVIEWS</h2>
-                <h3 className="reveal-on-scroll" style={{ fontSize: '3rem', marginBottom: '4rem' }}>Trusted by <span className="gradient-text">Real Partners</span></h3>
+                <div style={{ marginBottom: '4rem' }}>
+                    <h2 className="reveal-on-scroll" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '1rem' }}>[ 03 ] REVIEWS</h2>
+                    <h3 className="reveal-on-scroll" style={{ fontSize: 'clamp(2rem, 8vw, 3rem)' }}>Trusted by <span className="gradient-text">Real Partners</span></h3>
+                </div>
+                {/* ... (bento-grid content remains same) ... */}
                 <div className="bento-grid">
                     {[
                         {
@@ -174,6 +177,17 @@ const Home = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section style={{ textAlign: 'center', background: 'linear-gradient(to bottom, transparent, hsla(var(--pc) / 0.05))' }}>
+                <h3 className="reveal-on-scroll" style={{ fontSize: 'clamp(2.5rem, 10vw, 5rem)', marginBottom: '3rem', lineHeight: '1.1' }}>
+                    Ready to <span className="gradient-text">Augment</span> your Reality?
+                </h3>
+                <div className="reveal-on-scroll" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <Link to="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>Start Your Project</Link>
+                    <Link to="/portfolio" className="btn btn-secondary" style={{ padding: '1.2rem 3rem' }}>View Portfolio</Link>
                 </div>
             </section>
 

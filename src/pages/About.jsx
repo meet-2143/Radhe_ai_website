@@ -23,7 +23,7 @@ const About = () => {
         <main ref={containerRef}>
             <section className="hero" style={{ minHeight: '80vh' }}>
                 <h1 className="reveal" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}>OUR <span className="gradient-text">STORY</span></h1>
-                <p className="reveal hero-p" style={{ maxWidth: '800px' }}>
+                <p className="reveal hero-p" style={{ maxWidth: '800px', fontSize: 'clamp(1rem, 4vw, 1.2rem)' }}>
                     Founded with a vision to democratize high-end intelligence, Radhe AI has grown
                     from a boutique consultancy to a global IT powerhouse. We believe in the power
                     of technology to solve the world's most complex challenges.
@@ -53,14 +53,14 @@ const About = () => {
 
             <section>
                 <h2 style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '3rem' }}>[ 03 ] WHY CHOOSE US</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
                     {[
                         { title: 'Excellence', desc: 'We never settle for "good enough". Every line of code is a masterpiece.' },
                         { title: 'Security', desc: 'Security is not an afterthought. It is the foundation of everything we build.' },
                         { title: 'Innovation', desc: 'We stay ahead of the curve so you can lead the race.' }
                     ].map((item, idx) => (
                         <div key={idx} className="reveal">
-                            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>{item.title}</h3>
+                            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '1.5rem' }}>{item.title}</h3>
                             <p style={{ opacity: 0.5 }}>{item.desc}</p>
                         </div>
                     ))}
@@ -76,9 +76,14 @@ const About = () => {
                         { year: '2023', text: 'Awarded "Top AI Innovator" by TechInsights.' },
                         { year: '2024', text: 'Launched the first zero-trust AI infrastructure.' }
                     ].map((m, i) => (
-                        <div key={i} className="reveal" style={{ display: 'flex', gap: '4rem', alignItems: 'center' }}>
-                            <span className="gradient-text" style={{ fontSize: '3rem', fontWeight: '800', minWidth: '150px' }}>{m.year}</span>
-                            <p style={{ fontSize: '1.5rem', opacity: 0.8 }}>{m.text}</p>
+                        <div key={i} className="reveal" style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'clamp(100px, 20vw, 150px) 1fr',
+                            gap: 'clamp(1.5rem, 5vw, 4rem)',
+                            alignItems: 'center'
+                        }}>
+                            <span className="gradient-text" style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', fontWeight: '800' }}>{m.year}</span>
+                            <p style={{ fontSize: 'clamp(1.1rem, 4vw, 1.5rem)', opacity: 0.8 }}>{m.text}</p>
                         </div>
                     ))}
                 </div>
@@ -101,9 +106,9 @@ const About = () => {
                 <div className="bento-grid">
                     <div className="bento-item large reveal">
                         <div style={{ position: 'absolute', top: '2rem', right: '2rem' }}><Users size={32} color="hsl(var(--pc))" /></div>
-                        <h3 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Parth Mavani</h3>
-                        <p style={{ color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1.5rem', letterSpacing: '0.1em' }}>FOUNDER & CEO</p>
-                        <p style={{ opacity: 0.6, maxWidth: '500px', lineHeight: '1.7' }}>
+                        <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '1rem' }}>Parth Mavani</h3>
+                        <p style={{ color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1.5rem', letterSpacing: '0.1em', fontSize: '0.9rem' }}>FOUNDER & CEO</p>
+                        <p style={{ opacity: 0.6, maxWidth: '500px', lineHeight: '1.7', fontSize: '1rem' }}>
                             A visionary technologist with a passion for architecting complex AI systems.
                             Parth founded Radhe AI to bridge the gap between advanced research and
                             enterprise-grade implementation, focusing on operational clarity and
