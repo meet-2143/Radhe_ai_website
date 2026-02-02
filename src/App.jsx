@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import { services } from './data/servicesData'
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'))
@@ -12,6 +13,7 @@ const Services = lazy(() => import('./pages/Services'))
 const Portfolio = lazy(() => import('./pages/Portfolio'))
 const Contact = lazy(() => import('./pages/Contact'))
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -33,7 +35,27 @@ const Navbar = ({ onToggle, isOpen }) => (
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/about">About Us</Link>
-                <Link to="/services">Services</Link>
+
+                <div className="nav-item-dropdown">
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem', fontWeight: '500', opacity: 0.7 }}>
+                        Services <ChevronDown size={14} />
+                    </span>
+                    <div className="dropdown-menu" data-lenis-prevent>
+                        {services.map(service => (
+                            <Link key={service.id} to={`/service/${service.id}`} className="dropdown-item">
+                                <div style={{ color: service.color }}><service.icon size={20} /></div>
+                                <div className="dropdown-item-content">
+                                    <h5>{service.title}</h5>
+                                    <p>{service.shortDesc}</p>
+                                </div>
+                            </Link>
+                        ))}
+                        <Link to="/services" style={{ marginTop: '0.5rem', fontSize: '0.75rem', textAlign: 'center', opacity: 0.5, textDecoration: 'none', color: 'white' }}>
+                            View All Services
+                        </Link>
+                    </div>
+                </div>
+
                 <Link to="/portfolio">Work</Link>
                 <Link to="/contact">Contact</Link>
             </div>
@@ -43,7 +65,9 @@ const Navbar = ({ onToggle, isOpen }) => (
                     padding: '0.6rem 1.5rem',
                     fontSize: '0.75rem',
                     fontWeight: '700',
-                    borderRadius: '100px'
+                    borderRadius: '100px',
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0
                 }}>
                     Get Started
                 </Link>
@@ -57,11 +81,22 @@ const Navbar = ({ onToggle, isOpen }) => (
 )
 
 const MobileNav = ({ isOpen, onToggle }) => (
-    <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
+    <div className={`mobile-nav ${isOpen ? 'open' : ''}`} data-lenis-prevent>
         <Link to="/" onClick={onToggle}>Home</Link>
         <Link to="/about" onClick={onToggle}>About Us</Link>
-        <Link to="/services" onClick={onToggle}>Services</Link>
-        <Link to="/portfolio" onClick={onToggle}>Work</Link>
+
+        <div style={{ width: '100%', textAlign: 'center', marginTop: '1rem' }}>
+            <span style={{ fontSize: '0.8rem', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Our Services</span>
+            <div className="mobile-services-grid">
+                {services.map(s => (
+                    <Link key={s.id} to={`/service/${s.id}`} onClick={onToggle} className="mobile-service-link">
+                        {s.title}
+                    </Link>
+                ))}
+            </div>
+        </div>
+
+        <Link to="/portfolio" onClick={onToggle} style={{ marginTop: '1rem' }}>Work</Link>
         <Link to="/contact" onClick={onToggle}>Contact</Link>
         <button className="btn btn-primary" onClick={() => { onToggle(); window.location.href = '/contact' }}>Get Started</button>
     </div>
@@ -98,11 +133,10 @@ const Footer = () => (
 
             <div>
                 <h4 style={{ fontSize: '0.9rem', color: 'hsl(var(--pc))', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Services</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    <span style={{ opacity: 0.6 }}>AI & Neural Networks</span>
-                    <span style={{ opacity: 0.6 }}>Cloud Infrastructure</span>
-                    <span style={{ opacity: 0.6 }}>Cyber Security</span>
-                    <span style={{ opacity: 0.6 }}>Custom Software</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                    {services.map(s => (
+                        <Link key={s.id} to={`/service/${s.id}`} style={{ opacity: 0.6, textDecoration: 'none', color: 'white', fontSize: '0.9rem' }}>{s.title}</Link>
+                    ))}
                 </div>
             </div>
 
@@ -176,6 +210,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
+                    <Route path="/service/:id" element={<ServiceDetail />} />
                     <Route path="/portfolio" element={<Portfolio />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/project/:id" element={<ProjectDetail />} />

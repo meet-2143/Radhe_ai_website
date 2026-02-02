@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { Cpu, Cloud, Shield, Database, Layout, Search, Layers, Repeat } from 'lucide-react'
 
@@ -44,41 +45,41 @@ const Services = () => {
             <section id="services-grid">
                 <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '3rem' }}>[ 01 ] CORE EXPERTISE</h2>
                 <div className="bento-grid">
-                    <div className="bento-item large">
+                    <Link to="/service/ai-ml" className="bento-item large" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Cpu size={32} color="hsl(var(--pc))" />
                         <h3>AI & Machine Learning</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
                             Custom neural networks, natural language processing, and predictive models
                             designed to automate and optimize your core business logic.
                         </p>
-                    </div>
-                    <div className="bento-item wide">
+                    </Link>
+                    <Link to="/service/cloud-infra" className="bento-item wide" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Cloud size={32} color="hsl(var(--sc))" />
                         <h3>Cloud Infrastructure</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
                             Scalable, zero-trust cloud architectures on AWS, Azure, and GCP.
                         </p>
-                    </div>
-                    <div className="bento-item">
+                    </Link>
+                    <Link to="/service/cyber-security" className="bento-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Shield size={24} />
                         <h3>Cyber Security</h3>
-                    </div>
-                    <div className="bento-item">
+                    </Link>
+                    <Link to="/service/analytics" className="bento-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Database size={24} />
                         <h3>Data Analytics</h3>
-                    </div>
-                    <div className="bento-item wide">
+                    </Link>
+                    <Link to="/service/ui-ux" className="bento-item wide" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Layout size={32} color="hsl(var(--pc))" />
                         <h3>UI/UX Design</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
                             Premium, user-centric interfaces that blend aesthetic beauty with
                             functional excellence.
                         </p>
-                    </div>
-                    <div className="bento-item">
+                    </Link>
+                    <Link to="/service/seo" className="bento-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Search size={24} />
                         <h3>SEO & Growth</h3>
-                    </div>
+                    </Link>
                 </div>
             </section>
 
