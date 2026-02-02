@@ -27,7 +27,7 @@ export const projects = [
         description: "An AI-driven logistics engine that optimizes global shipping routes in real-time. It processes millions of data points, including weather, port congestion, and fuel prices, to ensure maximum efficiency.",
         tech: ["React", "Node.js", "PostgreSQL", "Graph Neural Networks"],
         color: "linear-gradient(135deg, #111827, #374151)",
-        image: "/src/assets/projects/logistics.png",
+        image: "src/assets/projects/logistics.png",
         caseStudy: {
             problem: "A global shipping leader was struggling with inefficient routing, with 15% of their container capacity remaining unutilized or traveling redundant paths due to static scheduling.",
             solution: "We developed a Graph Neural Network (GNN) that treats the global shipping network as a dynamic system. It suggests real-time re-routing and load balancing based on predictive demand spikes.",
