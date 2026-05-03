@@ -38,7 +38,7 @@ const About = () => {
                         <Target size={32} color="hsl(var(--pc))" />
                         <h3 style={{ marginTop: '1.5rem' }}>Our Mission</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
-                            To help businesses of every size compete and win in search — through
+                            To help businesses of every size compete and win in search  through
                             data-driven SEO, compelling content, and performance marketing that
                             delivers real, lasting results.
                         </p>
@@ -47,7 +47,7 @@ const About = () => {
                         <Rocket size={32} color="hsl(var(--sc))" />
                         <h3 style={{ marginTop: '1.5rem' }}>Our Vision</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
-                            A digital landscape where every brand has the visibility it deserves —
+                            A digital landscape where every brand has the visibility it deserves 
                             powered by intelligent SEO, authoritative content, and AI-driven
                             marketing strategies.
                         </p>
@@ -68,12 +68,12 @@ const About = () => {
                         {
                             icon: <BarChart2 size={28} color="hsl(var(--sc))" />,
                             title: 'Results You Can Measure',
-                            desc: 'No vanity metrics. We track rankings, organic traffic, leads, and revenue — and we report on all of it transparently.'
+                            desc: 'No vanity metrics. We track rankings, organic traffic, leads, and revenue  and we report on all of it transparently.'
                         },
                         {
                             icon: <Globe size={28} color="hsl(var(--pc))" />,
                             title: 'Full-Funnel Coverage',
-                            desc: 'From awareness to conversion, we cover SEO, content, paid media, and design — so nothing falls through the cracks.'
+                            desc: 'From awareness to conversion, we cover SEO, content, paid media, and design  so nothing falls through the cracks.'
                         }
                     ].map((item, idx) => (
                         <div key={idx} className="reveal">
@@ -92,7 +92,7 @@ const About = () => {
                     {[
                         { year: '2021', text: 'Radhe AI founded as a boutique SEO consultancy.' },
                         { year: '2022', text: 'Expanded into content marketing and paid media, growing to 30+ clients.' },
-                        { year: '2023', text: 'Launched our On-Demand SEO & Content service — 500+ articles delivered.' },
+                        { year: '2023', text: 'Launched our On-Demand SEO & Content service  500+ articles delivered.' },
                         { year: '2024', text: 'Recognized as a top digital marketing agency, serving clients across 12 industries.' },
                         { year: '2025', text: 'Introduced AI-powered AEO services to future-proof client visibility in LLM search.' }
                     ].map((m, i) => (
@@ -138,7 +138,7 @@ const About = () => {
                         <p style={{ opacity: 0.6, maxWidth: '500px', lineHeight: '1.7', fontSize: '1rem' }}>
                             A digital marketing strategist with a deep background in SEO and content
                             growth. Parth founded Radhe AI to give ambitious brands access to
-                            enterprise-level search strategy — without the enterprise price tag.
+                            enterprise-level search strategy  without the enterprise price tag.
                         </p>
                     </div>
                     <div className="bento-item wide reveal">
@@ -146,7 +146,7 @@ const About = () => {
                         <p style={{ color: 'hsl(var(--sc))', fontWeight: 'bold' }}>CO-FOUNDER & HEAD OF GROWTH</p>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
                             Specializing in performance marketing, analytics, and AI-driven content
-                            strategy, Meet leads growth operations — ensuring every campaign is
+                            strategy, Meet leads growth operations  ensuring every campaign is
                             optimized for measurable ROI and long-term organic authority.
                         </p>
                     </div>

@@ -53,7 +53,12 @@ const Portfolio = () => {
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 450px), 1fr))', gap: 'clamp(1rem, 5vw, 3rem)' }}>
                     {filteredProjects.map((project, idx) => (
-                        <div key={idx} className="reveal glass-card" style={{ padding: '0', overflow: 'hidden' }}>
+                        <Link
+                            key={idx}
+                            to={`/project/${project.id}`}
+                            className="reveal glass-card"
+                            style={{ padding: '0', overflow: 'hidden', textDecoration: 'none', color: 'inherit', display: 'block' }}
+                        >
                             <div style={{
                                 height: '350px',
                                 background: project.color,
@@ -99,12 +104,12 @@ const Portfolio = () => {
                                             </span>
                                         ))}
                                     </div>
-                                    <Link to={`/project/${project.id}`} className="btn btn-secondary" style={{ padding: '0.8rem 1.5rem', fontSize: '0.75rem' }}>
+                                    <span className="btn btn-secondary" style={{ padding: '0.8rem 1.5rem', fontSize: '0.75rem' }}>
                                         VIEW CASE STUDY
-                                    </Link>
+                                    </span>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </section>

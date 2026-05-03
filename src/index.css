@@ -133,6 +133,9 @@ h3 {
     font-size: 0.8rem;
     width: 100%;
   }
+  .btn-inline {
+    width: auto !important;
+  }
 }
 
 .btn-primary {
@@ -286,7 +289,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -645,4 +648,268 @@ section {
   .faq-item.active .faq-answer {
     padding: 0 1.5rem 1.5rem;
   }
+}
+
+/* ── Audience grid responsive ── */
+@media (max-width: 900px) {
+  .audience-top { grid-template-columns: repeat(2, 1fr) !important; }
+  .audience-bottom { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 600px) {
+  .audience-top, .audience-bottom { grid-template-columns: 1fr !important; }
+}
+
+/* ── Site type grid responsive ── */
+@media (max-width: 900px) {
+  .site-type-top { grid-template-columns: repeat(2, 1fr) !important; }
+  .site-type-bottom { grid-template-columns: 1fr !important; max-width: 100% !important; }
+}
+@media (max-width: 600px) {
+  .site-type-top { grid-template-columns: 1fr !important; }
+}
+
+/* ── Funnel grid responsive ── */
+@media (max-width: 900px) {
+  .funnel-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Industries sidebar responsive ── */
+@media (max-width: 768px) {
+  .industries-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .industries-sidebar {
+    position: static !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Sticky CTAs ── */
+@media (max-width: 480px) {
+  .sticky-ctas {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* ── Results table ── */
+table th, table td {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  table th, table td {
+    padding: 0.9rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ── Funnel cards responsive ── */
+@media (max-width: 860px) {
+  .funnel-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Funnel 3-col responsive ── */
+@media (max-width: 860px) {
+  .funnel-3col { grid-template-columns: 1fr !important; }
+}
+
+/* ════════════════════════════════════════════
+   COMPREHENSIVE MOBILE RESPONSIVE STYLES
+   Breakpoints: 1024px | 768px | 640px | 480px
+   ════════════════════════════════════════════ */
+
+/* ── Tablet (≤1024px) ── */
+@media (max-width: 1024px) {
+  /* Funnel 3-col → 1-col */
+  .funnel-3col,
+  [style*="repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Featured work 2-col → 1-col */
+  [style*="repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats 2x2 grid → 2-col */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Industries sidebar layout */
+  .industries-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Mobile (≤768px) ── */
+@media (max-width: 768px) {
+  /* Section padding tighter */
+  section {
+    padding: 60px 5% !important;
+  }
+
+  /* Hero left-align already handled, reduce padding-top */
+  .hero {
+    padding-top: 100px !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  /* Hero CTA buttons stack */
+  .hero .hero-reveal div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Trust bar wraps tighter */
+  .hero .hero-reveal:last-child {
+    gap: 1rem !important;
+    justify-content: flex-start !important;
+  }
+
+  /* All 3-col grids → 1-col */
+  .audience-top,
+  .audience-bottom,
+  .site-type-top,
+  .site-type-bottom {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
+
+  /* Industries sidebar stacks */
+  .industries-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Results table scrollable */
+  .results-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* WhyUs comparison table scrollable */
+  .comparison-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Footer grid → 2-col */
+  footer > div:first-child {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Footer brand col full width */
+  footer > div:first-child > div:first-child {
+    grid-column: span 2 !important;
+  }
+
+  /* Sticky CTAs smaller */
+  .sticky-ctas-wrap {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+  }
+}
+
+/* ── Small mobile (≤640px) ── */
+@media (max-width: 640px) {
+  /* Typography scale down */
+  h1 { font-size: clamp(2.5rem, 14vw, 4rem) !important; }
+  h2 { font-size: clamp(1.8rem, 10vw, 3rem) !important; }
+  h3 { font-size: clamp(1.3rem, 7vw, 2rem) !important; }
+
+  /* Hero line-height */
+  .hero h1 { line-height: 0.95 !important; }
+
+  /* Section padding */
+  section { padding: 50px 4% !important; }
+
+  /* Funnel cards full width */
+  .funnel-3col { grid-template-columns: 1fr !important; }
+
+  /* Featured work cards */
+  [style*="repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
+
+  /* Testimonials 1-col */
+  .testimonial-card { min-width: unset !important; }
+
+  /* Footer → 1-col */
+  footer > div:first-child {
+    grid-template-columns: 1fr !important;
+  }
+  footer > div:first-child > div:first-child {
+    grid-column: span 1 !important;
+  }
+
+  /* Footer bottom bar stack */
+  footer > div:last-child {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  /* Nav pill full width on small screens */
+  .nav-container {
+    width: 94vw !important;
+  }
+
+  /* Process cards in WhyUs/Services */
+  .process-card { padding: 1.5rem !important; }
+
+  /* FAQ padding */
+  .faq-question { padding: 1rem 1.25rem !important; }
+  .faq-item.active .faq-answer { padding: 0 1.25rem 1.25rem !important; }
+
+  /* Contact form grid → 1-col */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Industries sidebar buttons → 2-col grid */
+  .industries-sidebar {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    position: static !important;
+  }
+
+  /* Sticky CTAs */
+  .sticky-ctas-wrap {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    gap: 0.5rem !important;
+  }
+  .sticky-ctas-wrap a {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+/* ── Extra small (≤480px) ── */
+@media (max-width: 480px) {
+  section { padding: 40px 4% !important; }
+
+  .hero { padding-top: 90px !important; }
+
+  /* Metric chips wrap */
+  .metrics-row { gap: 0.5rem !important; }
+
+  /* Audience card header wraps */
+  .audience-header { flex-wrap: wrap !important; }
+
+  /* Mobile services grid 1-col */
+  .mobile-services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Bento items padding */
+  .bento-item { padding: 1.25rem !important; }
+
+  /* Table font size */
+  table { font-size: 0.75rem !important; }
+  table th, table td { padding: 0.75rem 0.75rem !important; }
 }

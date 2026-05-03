@@ -49,7 +49,7 @@ const Services = () => {
                         <Zap size={32} color="hsl(var(--pc))" />
                         <h3>Digital Marketing Services</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
-                            Multi-channel performance campaigns across Google, Meta, and LinkedIn —
+                            Multi-channel performance campaigns across Google, Meta, and LinkedIn 
                             built to convert and scale.
                         </p>
                     </Link>

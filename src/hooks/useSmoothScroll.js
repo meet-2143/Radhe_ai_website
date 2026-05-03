@@ -1,5 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Lenis from '@studio-freight/lenis'
+
+let lenisInstance = null
+
+export const getLenis = () => lenisInstance
 
 export const useSmoothScroll = () => {
     useEffect(() => {
@@ -15,6 +19,8 @@ export const useSmoothScroll = () => {
             infinite: false,
         })
 
+        lenisInstance = lenis
+
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
@@ -24,6 +30,7 @@ export const useSmoothScroll = () => {
 
         return () => {
             lenis.destroy()
+            lenisInstance = null
         }
     }, [])
 }

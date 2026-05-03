@@ -10,7 +10,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
             problem: "A SaaS company had strong product-market fit but was invisible in search. 90% of their traffic came from paid ads, making growth expensive and unsustainable.",
-            identifiedProblem: "A technical audit revealed 400+ crawl errors, duplicate meta tags across 60% of pages, and zero structured internal linking — the site had no topical authority signal.",
+            identifiedProblem: "A technical audit revealed 400+ crawl errors, duplicate meta tags across 60% of pages, and zero structured internal linking  the site had no topical authority signal.",
             solution: "We executed a three-phase plan: technical cleanup, content cluster architecture around 8 core topics, and a targeted outreach campaign securing 45 high-DA backlinks from industry publications.",
             impact: "Organic traffic grew 3x in 6 months. The client reduced paid ad spend by 50% while maintaining the same lead volume. 35 target keywords now rank in the top 5.",
             metrics: [
@@ -93,7 +93,7 @@ export const projects = [
         color: "linear-gradient(135deg, #0369a1, #38bdf8)",
         image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "A DTC wellness brand was spending $50K/month on ads with a 2.1x ROAS — barely breaking even. They had no email strategy and their organic presence was non-existent.",
+            problem: "A DTC wellness brand was spending $50K/month on ads with a 2.1x ROAS  barely breaking even. They had no email strategy and their organic presence was non-existent.",
             identifiedProblem: "Ad account audit revealed massive budget waste on broad match keywords and no retargeting funnel. 80% of ad spend was going to cold audiences with no nurture path.",
             solution: "Restructured the ad account with tightly themed ad groups, built a 5-step email welcome and abandonment flow, and launched an SEO content plan targeting bottom-of-funnel buyer queries.",
             impact: "ROAS improved from 2.1x to 8x within 90 days. Email now contributes 35% of total revenue. Organic traffic grew 180% in 6 months, reducing reliance on paid channels.",
@@ -117,7 +117,7 @@ export const projects = [
             problem: "A SaaS startup had strong product reviews but a 1.8% website conversion rate. Visitors were landing and leaving without signing up for the free trial.",
             identifiedProblem: "Heatmap and session recording analysis showed users were confused by the value proposition within the first 5 seconds. The CTA hierarchy was unclear and the pricing page had a 78% exit rate.",
             solution: "Redesigned the entire site with a message-first approach: clear hero headline, social proof above the fold, and a simplified pricing page. Built a reusable component library for the dev team.",
-            impact: "Conversion rate increased from 1.8% to 5.2% — a 190% improvement. Bounce rate dropped by 35%. The new design system reduced future dev time by 60%.",
+            impact: "Conversion rate increased from 1.8% to 5.2%  a 190% improvement. Bounce rate dropped by 35%. The new design system reduced future dev time by 60%.",
             metrics: [
                 { label: "Conversion Rate", value: "+190%" },
                 { label: "Bounce Rate", value: "-35%" },
@@ -136,7 +136,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
         caseStudy: {
             problem: "An e-commerce giant saw a 25% drop in organic traffic after a major search engine algorithm update.",
-            identifiedProblem: "Competitor analysis showed the client's content lacked 'Semantic Depth'—their pages were technically sound but lacked the topical authority needed for high-intent keywords.",
+            identifiedProblem: "Competitor analysis showed the client's content lacked 'Semantic Depth'their pages were technically sound but lacked the topical authority needed for high-intent keywords.",
             solution: "Deployed a custom NLP engine to map the knowledge graph of their industry. Mass-optimized 5,000+ product descriptions using semantic entity enrichment.",
             impact: "Recovered all lost traffic within 90 days and surpassed previous peaks by 45%. 120 prioritized keywords moved from Page 3 to Top 3 results.",
             metrics: [

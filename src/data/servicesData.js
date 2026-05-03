@@ -1,4 +1,248 @@
-import { Cpu, Cloud, Shield, Layout, Search, BarChart, Type, Globe, Zap } from 'lucide-react'
+import { Cpu, Cloud, Shield, Layout, Search, BarChart, Type, Globe, Zap, MapPin, ShoppingCart, FileText, Link2, Settings, Layers } from 'lucide-react'
+
+
+export const seoServices = [
+    {
+        id: 'on-page-seo',
+        title: 'On-Page SEO',
+        shortDesc: 'Optimize every element on your pages to rank higher and convert better.',
+        icon: FileText,
+        color: 'hsl(var(--pc))',
+        bestFor: 'Businesses with existing content that isn\'t ranking',
+        optimizes: 'Title tags, meta descriptions, headings, content depth, internal links, schema markup',
+        outcome: 'Higher rankings, better CTR, more qualified organic traffic',
+        details: {
+            overview: 'On-Page SEO is the foundation of every successful search strategy. We optimize every on-page signal  from content structure to schema markup  so search engines understand exactly what your page is about and rank it accordingly.',
+            process: [
+                { title: 'Content Audit', desc: 'Identify thin, duplicate, or underperforming pages dragging down your rankings.' },
+                { title: 'Keyword Mapping', desc: 'Assign the right keywords to the right pages based on intent and competition.' },
+                { title: 'On-Page Optimization', desc: 'Rewrite titles, meta tags, headings, and body content for maximum relevance.' }
+            ],
+            benefits: ['Improved keyword rankings within 30–60 days', 'Higher click-through rates from search results', 'Better user engagement and lower bounce rates'],
+            faqs: [
+                { q: 'What does On-Page SEO actually include?', a: 'Title tags, meta descriptions, H1–H6 structure, keyword placement, internal linking, image alt text, schema markup, and content depth  everything on the page itself.' },
+                { q: 'How quickly does On-Page SEO show results?', a: 'Most clients see measurable ranking improvements within 30–60 days of on-page changes, especially for pages that were previously under-optimized.' },
+                { q: 'Do you rewrite my existing content?', a: 'We optimize it first. If the content is fundamentally thin or off-topic, we recommend a rewrite. We never delete content without a clear replacement strategy.' }
+            ]
+        }
+    },
+    {
+        id: 'off-page-seo',
+        title: 'Off-Page SEO',
+        shortDesc: 'Build domain authority through strategic link acquisition and brand signals.',
+        icon: Link2,
+        color: 'hsl(var(--sc))',
+        bestFor: 'Sites with good content but low domain authority',
+        optimizes: 'Backlink profile, domain authority, brand mentions, trust signals',
+        outcome: 'Stronger domain authority, higher rankings for competitive keywords',
+        details: {
+            overview: 'Off-Page SEO is about building your site\'s reputation in the eyes of search engines. We acquire high-quality backlinks from relevant, authoritative domains through ethical outreach  no PBNs, no spam.',
+            process: [
+                { title: 'Link Profile Audit', desc: 'Analyze your current backlink profile and disavow toxic links.' },
+                { title: 'Competitor Gap Analysis', desc: 'Find where competitors are getting links that you\'re missing.' },
+                { title: 'Outreach & Acquisition', desc: 'Secure placements on high-DA, niche-relevant domains through editorial outreach.' }
+            ],
+            benefits: ['Increased domain authority over time', 'Rankings for competitive, high-value keywords', 'Sustainable organic growth that compounds'],
+            faqs: [
+                { q: 'What makes a backlink "high quality"?', a: 'Relevance to your niche, the linking domain\'s authority (DA/DR), editorial placement (not paid or footer links), and traffic on the linking page.' },
+                { q: 'Do you use PBNs or link farms?', a: 'Never. We only build links through legitimate editorial outreach, guest posts on real publications, and digital PR. Black-hat links create short-term gains and long-term penalties.' },
+                { q: 'How many links do I need per month?', a: 'Quality over quantity. 5 links from DA 50+ relevant sites outperform 50 links from low-quality directories. We set targets based on your competitive gap.' }
+            ]
+        }
+    },
+    {
+        id: 'keyword-research',
+        title: 'Keyword Research',
+        shortDesc: 'Find the exact search terms your buyers use  and build a strategy around them.',
+        icon: Search,
+        color: 'hsl(var(--pc))',
+        bestFor: 'Businesses starting SEO or launching new content',
+        optimizes: 'Keyword targeting, content strategy, search intent alignment',
+        outcome: 'A clear roadmap of keywords that drive leads, not just traffic',
+        details: {
+            overview: 'Most keyword research focuses on volume. We focus on intent. We find the keywords your ideal customers use when they\'re ready to buy  and build your entire content and SEO strategy around them.',
+            process: [
+                { title: 'Seed Keyword Discovery', desc: 'Map your products/services to the language your customers actually use.' },
+                { title: 'Intent Classification', desc: 'Separate informational, navigational, and transactional keywords.' },
+                { title: 'Opportunity Scoring', desc: 'Prioritize keywords by ROI potential: volume × intent × competition.' }
+            ],
+            benefits: ['Target keywords that convert, not just rank', 'Clear content roadmap for 6–12 months', 'Competitive gap identification'],
+            faqs: [
+                { q: 'What\'s the difference between head terms and long-tail keywords?', a: 'Head terms are short, high-volume, high-competition (e.g., "SEO services"). Long-tail keywords are specific, lower-volume, but much higher intent (e.g., "SEO services for SaaS startups in London").' },
+                { q: 'How do you prioritize which keywords to target first?', a: 'We score keywords by a combination of search volume, keyword difficulty, and business value. We start with quick wins  keywords where you\'re on page 2 and can move to page 1 fast.' },
+                { q: 'Do you research competitor keywords?', a: 'Yes. Competitor keyword gap analysis is a core part of our research. We find keywords your competitors rank for that you don\'t  and build a plan to capture them.' }
+            ]
+        }
+    },
+    {
+        id: 'link-building',
+        title: 'Link Building',
+        shortDesc: 'Earn authoritative backlinks that move the needle on rankings.',
+        icon: Link2,
+        color: 'hsl(var(--sc))',
+        bestFor: 'Competitive niches where authority is the ranking differentiator',
+        optimizes: 'Domain rating, referring domains, anchor text diversity',
+        outcome: 'Ranking for competitive keywords that drive high-value leads',
+        details: {
+            overview: 'Link building is the most competitive part of SEO  and the most impactful. We run manual, relationship-driven outreach campaigns to earn links from publications your competitors can\'t easily replicate.',
+            process: [
+                { title: 'Prospect Research', desc: 'Identify high-authority, niche-relevant sites with real traffic.' },
+                { title: 'Content Creation', desc: 'Develop link-worthy assets: data studies, expert guides, and tools.' },
+                { title: 'Outreach & Placement', desc: 'Personalized outreach to editors and site owners for editorial placements.' }
+            ],
+            benefits: ['Measurable DR/DA growth month over month', 'Rankings for high-competition, high-value keywords', 'Brand visibility on industry-leading publications'],
+            faqs: [
+                { q: 'How long does link building take to show results?', a: 'Links typically take 2–4 months to be indexed and influence rankings. Consistent monthly link building compounds over time  the results accelerate after month 6.' },
+                { q: 'What is "anchor text" and why does it matter?', a: 'Anchor text is the clickable text of a link. A natural, diverse anchor text profile (branded, generic, and keyword-rich) signals organic link acquisition to Google.' },
+                { q: 'Can you get links on specific publications?', a: 'We can target specific publications in your niche. Success depends on the site\'s editorial standards and your content quality, but we have established relationships across many industries.' }
+            ]
+        }
+    },
+    {
+        id: 'technical-seo',
+        title: 'Technical SEO',
+        shortDesc: 'Fix the crawlability, speed, and structure issues holding your site back.',
+        icon: Settings,
+        color: 'hsl(var(--pc))',
+        bestFor: 'Sites with traffic drops, crawl issues, or poor Core Web Vitals',
+        optimizes: 'Site speed, crawlability, indexation, Core Web Vitals, site architecture',
+        outcome: 'A technically sound site that search engines can fully crawl and rank',
+        details: {
+            overview: 'Technical SEO is the infrastructure layer of search. If Google can\'t crawl, index, or understand your site, no amount of content or links will help. We perform deep technical audits and fix every issue that\'s blocking your rankings.',
+            process: [
+                { title: 'Full Technical Audit', desc: 'Crawl your entire site to identify errors, warnings, and opportunities.' },
+                { title: 'Core Web Vitals Optimization', desc: 'Improve LCP, FID, and CLS scores to meet Google\'s page experience standards.' },
+                { title: 'Architecture & Indexation', desc: 'Fix crawl budget waste, canonicalization issues, and XML sitemap errors.' }
+            ],
+            benefits: ['Faster site speed and better user experience', 'Full crawlability and indexation of all key pages', 'Recovery from algorithm penalties'],
+            faqs: [
+                { q: 'What are Core Web Vitals?', a: 'Google\'s metrics for page experience: LCP (loading speed), FID/INP (interactivity), and CLS (visual stability). Poor scores are a confirmed ranking factor.' },
+                { q: 'My site was penalized by Google. Can you help?', a: 'Yes. We perform a full penalty audit to identify whether it\'s algorithmic (content/link quality) or manual (policy violation) and build a recovery plan.' },
+                { q: 'How often should a technical SEO audit be done?', a: 'A full audit every 6 months, with monthly monitoring for critical issues like broken links, crawl errors, and indexation drops.' }
+            ]
+        }
+    },
+    {
+        id: 'local-seo',
+        title: 'Local SEO',
+        shortDesc: 'Dominate "near me" searches and Google Maps in your target area.',
+        icon: MapPin,
+        color: 'hsl(var(--sc))',
+        bestFor: 'Service businesses, brick-and-mortar stores, and local franchises',
+        optimizes: 'Google Business Profile, local citations, NAP consistency, local content',
+        outcome: 'More calls, walk-ins, and quote requests from local customers',
+        details: {
+            overview: 'Local SEO is the fastest way for service businesses to generate leads. We optimize your Google Business Profile, build local citations, and create location-specific content that puts you at the top of local search results.',
+            process: [
+                { title: 'GBP Optimization', desc: 'Fully optimize your Google Business Profile for maximum local visibility.' },
+                { title: 'Citation Building', desc: 'Build and clean NAP citations across 50+ local directories.' },
+                { title: 'Local Content Strategy', desc: 'Create location-specific landing pages and locally relevant content.' }
+            ],
+            benefits: ['Top 3 Google Maps placement for target keywords', 'More inbound calls and quote requests', 'Dominance over local competitors'],
+            faqs: [
+                { q: 'What is NAP consistency and why does it matter?', a: 'NAP = Name, Address, Phone. Inconsistent NAP across directories confuses Google and suppresses local rankings. We audit and fix all inconsistencies.' },
+                { q: 'How important are Google reviews for local SEO?', a: 'Very. Review quantity, recency, and response rate are all local ranking factors. We help you build a review acquisition system.' },
+                { q: 'Can you help multi-location businesses?', a: 'Yes. We manage local SEO at scale for franchises and multi-location businesses, with individual GBP optimization and location pages for each branch.' }
+            ]
+        }
+    },
+    {
+        id: 'ecommerce-seo',
+        title: 'eCommerce SEO',
+        shortDesc: 'Drive organic revenue to your online store with product and category SEO.',
+        icon: ShoppingCart,
+        color: 'hsl(var(--pc))',
+        bestFor: 'Online stores on Shopify, WooCommerce, Magento, or custom platforms',
+        optimizes: 'Product pages, category pages, faceted navigation, structured data',
+        outcome: 'More organic product page traffic and direct revenue from search',
+        details: {
+            overview: 'eCommerce SEO requires a different approach than standard SEO. With thousands of product pages, faceted navigation, and duplicate content risks, we build scalable systems that drive organic revenue at scale.',
+            process: [
+                { title: 'eCommerce Audit', desc: 'Identify duplicate content, thin product pages, and crawl budget waste.' },
+                { title: 'Category Page Optimization', desc: 'Turn category pages into high-converting, keyword-rich landing pages.' },
+                { title: 'Product Schema & Rich Results', desc: 'Implement product schema for price, availability, and review rich snippets.' }
+            ],
+            benefits: ['Organic revenue growth without ad spend', 'Rich snippet visibility in search results', 'Scalable optimization across thousands of products'],
+            faqs: [
+                { q: 'How do you handle duplicate content on product pages?', a: 'Through canonical tags, unique product descriptions, and proper handling of faceted navigation with robots.txt and parameter exclusions in GSC.' },
+                { q: 'Should I optimize product pages or category pages first?', a: 'Category pages first. They target broader, higher-volume keywords and drive traffic to multiple products. Product pages are optimized for long-tail, high-intent queries.' },
+                { q: 'Do you work with Shopify, WooCommerce, and Magento?', a: 'Yes. We have platform-specific expertise for all major eCommerce platforms and understand the unique technical SEO challenges each one presents.' }
+            ]
+        }
+    },
+    {
+        id: 'wordpress-seo',
+        title: 'WordPress SEO',
+        shortDesc: 'Maximize your WordPress site\'s search performance from the ground up.',
+        icon: Layers,
+        color: 'hsl(var(--sc))',
+        bestFor: 'WordPress sites with performance, plugin, or ranking issues',
+        optimizes: 'WordPress configuration, plugin setup, speed, content structure',
+        outcome: 'A fast, fully optimized WordPress site that ranks and converts',
+        details: {
+            overview: 'WordPress powers 43% of the web, but most WordPress sites are poorly optimized. We configure your WordPress environment for maximum SEO performance  from plugin setup to server-level speed optimization.',
+            process: [
+                { title: 'WordPress SEO Audit', desc: 'Audit your theme, plugins, and configuration for SEO issues.' },
+                { title: 'Speed & Performance', desc: 'Optimize Core Web Vitals through caching, image compression, and CDN setup.' },
+                { title: 'Yoast/RankMath Configuration', desc: 'Properly configure your SEO plugin for sitemaps, schema, and meta tags.' }
+            ],
+            benefits: ['Faster load times and better Core Web Vitals', 'Proper SEO plugin configuration', 'Clean, crawlable site architecture'],
+            faqs: [
+                { q: 'Which SEO plugin do you recommend  Yoast or RankMath?', a: 'Both are excellent. RankMath offers more features in the free version. We configure whichever you prefer and ensure it\'s set up correctly  most sites have it misconfigured.' },
+                { q: 'My WordPress site is slow. Can SEO fix that?', a: 'Site speed is a ranking factor and a conversion factor. We optimize images, implement caching, and configure a CDN to dramatically improve load times.' },
+                { q: 'Do you work with page builders like Elementor or Divi?', a: 'Yes, though we often recommend moving away from heavy page builders for performance-critical pages. We work within your existing setup and advise on trade-offs.' }
+            ]
+        }
+    },
+    {
+        id: 'shopify-seo',
+        title: 'Shopify SEO',
+        shortDesc: 'Unlock Shopify\'s organic potential and reduce your dependence on paid ads.',
+        icon: ShoppingCart,
+        color: 'hsl(var(--pc))',
+        bestFor: 'Shopify stores relying heavily on paid traffic',
+        optimizes: 'Shopify URL structure, collection pages, app bloat, speed',
+        outcome: 'Organic traffic that converts into Shopify sales without ad spend',
+        details: {
+            overview: 'Shopify has unique SEO limitations  forced URL structures, duplicate content from collections, and app bloat that kills page speed. We know every Shopify-specific SEO challenge and how to solve them.',
+            process: [
+                { title: 'Shopify SEO Audit', desc: 'Identify Shopify-specific issues: duplicate URLs, slow apps, and thin pages.' },
+                { title: 'Collection Page Optimization', desc: 'Turn collection pages into high-ranking, conversion-focused landing pages.' },
+                { title: 'App & Speed Audit', desc: 'Remove or replace apps that are bloating your store and hurting rankings.' }
+            ],
+            benefits: ['Reduced reliance on paid ads for revenue', 'Optimized collection and product pages', 'Faster Shopify store with better conversion rates'],
+            faqs: [
+                { q: 'Does Shopify have SEO limitations?', a: 'Yes. Shopify forces /collections/ and /products/ URL structures, creates duplicate content through multiple collection paths, and many apps add render-blocking scripts. We work around all of these.' },
+                { q: 'Can I rank a Shopify store against Amazon?', a: 'For specific long-tail product queries, yes. We focus on keywords where Amazon doesn\'t dominate and where your brand story and product expertise give you an edge.' },
+                { q: 'How do you handle Shopify\'s duplicate content issues?', a: 'Through canonical tags on product pages accessed via multiple collections, and by consolidating link equity to the primary product URL.' }
+            ]
+        }
+    },
+    {
+        id: 'magento-seo',
+        title: 'Magento SEO',
+        shortDesc: 'Enterprise-grade SEO for complex Magento stores at scale.',
+        icon: ShoppingCart,
+        color: 'hsl(var(--sc))',
+        bestFor: 'Large Magento stores with complex catalogs and technical SEO debt',
+        optimizes: 'Magento configuration, layered navigation, crawl budget, page speed',
+        outcome: 'Scalable organic growth for enterprise eCommerce operations',
+        details: {
+            overview: 'Magento\'s power comes with complexity. Layered navigation creates thousands of duplicate URLs, crawl budget gets wasted on faceted pages, and misconfigured canonical tags are rampant. We fix all of it.',
+            process: [
+                { title: 'Magento Technical Audit', desc: 'Deep audit of layered navigation, canonical issues, and crawl budget waste.' },
+                { title: 'Crawl Budget Optimization', desc: 'Configure robots.txt and URL parameters to focus crawl budget on revenue pages.' },
+                { title: 'Category & Product Optimization', desc: 'Optimize Magento category pages and product descriptions at scale.' }
+            ],
+            benefits: ['Efficient crawl budget allocation', 'Elimination of duplicate content at scale', 'Organic revenue growth for large catalogs'],
+            faqs: [
+                { q: 'What makes Magento SEO different from other platforms?', a: 'Magento\'s layered navigation can generate millions of duplicate URLs. Crawl budget management, canonical configuration, and faceted navigation handling are critical and complex.' },
+                { q: 'Do you work with Magento 2?', a: 'Yes. We work with both Magento Open Source and Adobe Commerce (Magento 2), and understand the SEO configuration differences between versions.' },
+                { q: 'How do you handle SEO for large catalogs (10,000+ products)?', a: 'Through scalable systems: bulk optimization templates, automated schema generation, and prioritization frameworks that focus effort on your highest-revenue categories first.' }
+            ]
+        }
+    }
+]
 
 export const services = [
     {
@@ -158,7 +402,7 @@ export const services = [
         icon: Cloud,
         color: 'var(--pc)',
         details: {
-            overview: 'We design and manage zero-trust cloud architectures that scale with your growth. AWS, Azure, or GCP—we ensure 99.99% uptime and maximum security.',
+            overview: 'We design and manage zero-trust cloud architectures that scale with your growth. AWS, Azure, or GCPwe ensure 99.99% uptime and maximum security.',
             process: [
                 { title: 'Architecture Design', desc: 'Designing resilient systems with auto-scaling capabilities.' },
                 { title: 'Security Hardening', desc: 'Implementing enterprise-grade firewalls and encryption.' },
@@ -217,7 +461,7 @@ export const services = [
             benefits: ['Increased conversion rates', 'Improved user retention', 'Strong visual brand identity'],
             faqs: [
                 { q: "What is the difference between UI and UX?", a: "UX (User Experience) is the logic and 'feel' of the journey. UI (User Interface) is the aesthetic and 'look' of the elements. You need great UX for function and great UI for delight." },
-                { q: "How does good design increase conversions?", a: "By removing 'friction'—making it incredibly easy for users to find what they need and take action. A clear, trustworthy design naturally leads to higher sales." },
+                { q: "How does good design increase conversions?", a: "By removing 'friction'making it incredibly easy for users to find what they need and take action. A clear, trustworthy design naturally leads to higher sales." },
                 { q: "What is a 'Design System' and why do I need one?", a: "It's a library of reusable components and rules (colors, buttons, fonts). It ensures your brand looks identical whether a user is on your app, website, or email." },
                 { q: "Do you design for mobile-first?", a: "Yes. Since most web traffic is now mobile, we design for the smallest screens first to ensure the core experience is perfect, then scale up for desktop." },
                 { q: "How do you test your designs with real users?", a: "We use high-fidelity prototypes and 'Usability Testing' where we watch real people use the app to see where they get confused or frustrated." },
