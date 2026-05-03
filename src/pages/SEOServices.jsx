@@ -120,9 +120,12 @@ const SEOServices = () => {
 
             {/* Trust bar */}
             <div style={{ background: 'hsla(var(--pc)/0.06)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '1.5rem 5%' }}>
-                <div style={{ display: 'flex', gap: '3rem', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
-                    {['50+ Clients Served', '12 Industries', '3x Avg. Traffic Growth', '35+ Top-5 Keywords', 'White-Hat Only'].map((t, i) => (
-                        <span key={i} style={{ fontSize: '0.85rem', fontWeight: '600', opacity: 0.7, letterSpacing: '0.05em' }}>{t}</span>
+                <div style={{ display: 'flex', gap: '0', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
+                    {['50+ Clients Served', '12 Industries', '3x Avg. Traffic Growth', '35+ Top-5 Keywords', 'White-Hat Only'].map((t, i, arr) => (
+                        <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                            <span style={{ fontSize: '0.85rem', fontWeight: '600', opacity: 0.7, letterSpacing: '0.05em', padding: '0 2rem' }}>{t}</span>
+                            {i < arr.length - 1 && <span style={{ width: '1px', height: '1.2rem', background: 'hsla(0,0%,100%,0.2)', flexShrink: 0 }} />}
+                        </div>
                     ))}
                 </div>
             </div>

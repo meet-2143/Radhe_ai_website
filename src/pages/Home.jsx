@@ -188,11 +188,11 @@ const Home = () => {
                     <Link to="/contact" className="btn btn-secondary" style={{ padding: '1.1rem 2.5rem', fontSize: '0.9rem' }}>Hire SEO Experts</Link>
                 </div>
                 {/* Trust bar */}
-                <div className="hero-reveal" style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', justifyContent: 'center', opacity: 0.5, fontSize: '0.8rem', letterSpacing: '0.08em' }}>
+                {/* <div className="hero-reveal" style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', justifyContent: 'center', opacity: 0.5, fontSize: '0.8rem', letterSpacing: '0.08em' }}>
                     {['50+ Clients', '12 Industries', '3x Avg. Traffic Growth', '35+ Top-5 Keywords', 'White-Hat Only'].map((t, i) => (
                         <span key={i}>{t}</span>
                     ))}
-                </div>
+                </div> */}
             </section>
 
             {/* ── WHY LEADS NOT TRAFFIC ── */}
