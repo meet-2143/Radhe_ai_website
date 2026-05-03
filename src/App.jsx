@@ -41,7 +41,7 @@ const Navbar = ({ onToggle, isOpen }) => (
                         Services <ChevronDown size={14} />
                     </span>
                     <div className="dropdown-menu" data-lenis-prevent>
-                        {services.map(service => (
+                        {services.filter(s => !['ai-ml', 'cloud-infra', 'cyber-security'].includes(s.id)).map(service => (
                             <Link key={service.id} to={`/service/${service.id}`} className="dropdown-item">
                                 <div style={{ color: service.color }}><service.icon size={20} /></div>
                                 <div className="dropdown-item-content">
@@ -88,7 +88,7 @@ const MobileNav = ({ isOpen, onToggle }) => (
         <div style={{ width: '100%', textAlign: 'center', marginTop: '1rem' }}>
             <span style={{ fontSize: '0.8rem', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Our Services</span>
             <div className="mobile-services-grid">
-                {services.map(s => (
+                {services.filter(s => !['ai-ml', 'cloud-infra', 'cyber-security'].includes(s.id)).map(s => (
                     <Link key={s.id} to={`/service/${s.id}`} onClick={onToggle} className="mobile-service-link">
                         {s.title}
                     </Link>
@@ -134,7 +134,7 @@ const Footer = () => (
             <div>
                 <h4 style={{ fontSize: '0.9rem', color: 'hsl(var(--pc))', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Services</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                    {services.map(s => (
+                    {services.filter(s => !['ai-ml', 'cloud-infra', 'cyber-security'].includes(s.id)).map(s => (
                         <Link key={s.id} to={`/service/${s.id}`} style={{ opacity: 0.6, textDecoration: 'none', color: 'white', fontSize: '0.9rem' }}>{s.title}</Link>
                     ))}
                 </div>

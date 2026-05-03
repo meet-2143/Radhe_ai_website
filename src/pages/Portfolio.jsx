@@ -124,9 +124,9 @@ const Portfolio = () => {
                 }}>
                     <div style={{ padding: '3rem' }}>
                         <div style={{ fontSize: '0.8rem', opacity: 0.5 }}>LATEST PUBLICATION</div>
-                        <h4 style={{ fontSize: '1.5rem', margin: '1rem 0' }}>Scaling Fintech Infrastructure to 10M Concurrent Users</h4>
-                        <p style={{ opacity: 0.6 }}>A comprehensive breakdown of how we optimized the backend architecture for a Tier 1 financial institution.</p>
-                        <Link to="/project/fintech-scaling" className="btn btn-secondary" style={{ marginTop: '2.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+                        <h4 style={{ fontSize: '1.5rem', margin: '1rem 0' }}>How We Tripled Organic Traffic for a SaaS Brand in 6 Months</h4>
+                        <p style={{ opacity: 0.6 }}>A full breakdown of the technical SEO, content clustering, and link building strategy that delivered 3x organic growth.</p>
+                        <Link to="/project/seo_domination" className="btn btn-secondary" style={{ marginTop: '2.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
                             Read Case Study <ExternalLink size={16} />
                         </Link>
                     </div>

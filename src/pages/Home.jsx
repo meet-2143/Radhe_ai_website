@@ -127,8 +127,8 @@ const Home = () => {
                             size: 'large'
                         },
                         {
-                            name: 'Shreejiv Gujarati',
-                            role: 'Founder @ Apna Indian Bazaar',
+                            name: 'Elvia',
+                            role: 'Chief Marketing Officer',
                             text: 'Their support in streamlining our business logic was exceptional. The team ensured every delivery milestone was met, giving us the operational confidence we needed to expand our market reach.',
                             rating: 5,
                             size: 'tall'
@@ -141,22 +141,22 @@ const Home = () => {
                             size: 'medium'
                         },
                         {
-                            name: 'Parth Mavani',
-                            role: 'Founder @ Semantic SEO',
+                            name: 'Mat Calica',
+                            role: 'Manager @ Alliance Virtual offices',
                             text: 'Radhe AI didn’t just build software; they contributed to our business growth. Their technical support and strategic operational clarity helped us optimize our SEO workflows significantly.',
                             rating: 5,
                             size: 'wide'
                         },
                         {
                             name: 'Anita Desai',
-                            role: 'Head of AI @ MedFront',
+                            role: 'Head of AI',
                             text: 'Security and privacy were our top concerns. Radhe AI exceeded all healthcare compliance standards with zero delays in implementation.',
                             rating: 5,
                             size: 'medium'
                         },
                         {
                             name: 'Michael Chen',
-                            role: 'VP Engineering @ LogiHub',
+                            role: 'VP Engineering ',
                             text: 'Professional, innovative, and incredibly fast. The predictive models they built saved us millions through operational optimization.',
                             rating: 5,
                             size: 'medium'

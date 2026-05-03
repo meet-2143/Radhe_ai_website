@@ -1,144 +1,127 @@
 export const projects = [
     {
-        id: "fintech-scaling",
-        title: "Scaling Fintech Infrastructure",
-        industry: "Fintech",
-        shortDesc: "Architecting for 10M+ concurrent users with 99.999% uptime.",
-        description: "A comprehensive overhaul of a Tier 1 financial institution's backend, transitioning from legacy monoliths to a highly-resilient, event-driven microservices architecture.",
-        tech: ["Kubernetes", "Kafka", "Go", "GCP"],
-        color: "linear-gradient(135deg, #1e40af, #3b82f6)",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+        id: "seo_domination",
+        title: "OrganicEdge SEO",
+        industry: "SEO",
+        shortDesc: "Full-scale SEO overhaul that tripled organic traffic in 6 months.",
+        description: "A comprehensive SEO strategy for a mid-size SaaS company, covering technical audits, content clustering, and authority link building to dominate competitive SERPs.",
+        tech: ["Ahrefs", "Screaming Frog", "Google Search Console", "Surfer SEO"],
+        color: "linear-gradient(135deg, #0f766e, #14b8a6)",
+        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "A major financial platform was collapsing under the weight of 2M concurrent users, with database deadlocks and API timeouts becoming a daily occurrence during market open.",
-            identifiedProblem: "System audit revealed a 'Death Star' architecture—tightly coupled services and a massive central database that created a single point of failure and extreme horizontal scaling bottlenecks.",
-            solution: "We re-architected the system using a cell-based infrastructure. We implemented event-streaming via Kafka to decouple transactions and deployed a globally distributed CockroachDB cluster for zero-latency data consistency across regions.",
-            impact: "The infrastructure now comfortably handles 10M+ concurrent transactions. Uptime increased to five-nines (99.999%) and operational costs were reduced by 40% through intelligent resource orchestration.",
+            problem: "A SaaS company had strong product-market fit but was invisible in search. 90% of their traffic came from paid ads, making growth expensive and unsustainable.",
+            identifiedProblem: "A technical audit revealed 400+ crawl errors, duplicate meta tags across 60% of pages, and zero structured internal linking — the site had no topical authority signal.",
+            solution: "We executed a three-phase plan: technical cleanup, content cluster architecture around 8 core topics, and a targeted outreach campaign securing 45 high-DA backlinks from industry publications.",
+            impact: "Organic traffic grew 3x in 6 months. The client reduced paid ad spend by 50% while maintaining the same lead volume. 35 target keywords now rank in the top 5.",
             metrics: [
-                { label: "Concurrent Users", value: "10M+" },
-                { label: "Uptime", value: "99.999%" },
-                { label: "DB Latency", value: "< 5ms" }
+                { label: "Organic Growth", value: "3x" },
+                { label: "Top 5 Keywords", value: "35" },
+                { label: "Ad Spend Cut", value: "-50%" }
             ]
         }
     },
     {
-        id: "neural_trade",
-        title: "NeuralTrade V3",
-        industry: "Fintech",
-        shortDesc: "High-frequency AI trading engine with zero-latency execution.",
-        description: "A state-of-the-art trading platform leveraging deep reinforcement learning to identify micro-patterns in global markets. Designed for institutional-grade reliability and lightning-fast execution.",
-        tech: ["Python", "TensorFlow", "FastAPI", "RTX 4090 Optimizer"],
-        color: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
-        image: "/projects/fintech.png",
+        id: "hire_seo_experts",
+        title: "SEO Expert Placement",
+        industry: "SEO",
+        shortDesc: "Dedicated SEO specialists embedded into a global e-commerce team.",
+        description: "We placed a team of 4 dedicated SEO experts into a fast-scaling e-commerce brand, acting as an in-house SEO department without the overhead of full-time hiring.",
+        tech: ["Semrush", "Google Analytics 4", "Looker Studio", "Screaming Frog"],
+        color: "linear-gradient(135deg, #7c3aed, #a78bfa)",
+        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "Legacy trading systems were experiencing 50ms latency, leading to significant slippage in high-volatility markets. This resulted in millions of dollars in 'invisible' losses annually for our client.",
-            solution: "We engineered a C++ low-latency core wrapped in a high-performance Python API. The system uses a custom Transformer-based architecture to predict tick-by-tick price movements with 94% accuracy over 10-millisecond windows.",
-            impact: "Reduced end-to-end latency to less than 2ms. The client reported a 12% increase in quarterly ROI and a 60% reduction in slippage-related losses.",
+            problem: "A rapidly growing e-commerce brand had no internal SEO capability. They were losing ground to competitors month over month despite a strong product catalog.",
+            identifiedProblem: "Without dedicated SEO ownership, product pages were being launched without optimization, category pages had thin content, and no one was monitoring algorithm updates.",
+            solution: "We embedded a dedicated team covering technical SEO, content optimization, and monthly reporting. We built an internal SEO playbook so every new product launch followed a consistent optimization checklist.",
+            impact: "Within 9 months, organic revenue increased by 68%. The team optimized 1,200+ product pages and established a repeatable launch process that cut time-to-rank by 40%.",
             metrics: [
-                { label: "Latency", value: "< 2ms" },
-                { label: "ROI Boost", value: "+12%" },
-                { label: "Accuracy", value: "94%" }
+                { label: "Organic Revenue", value: "+68%" },
+                { label: "Pages Optimized", value: "1,200+" },
+                { label: "Time-to-Rank", value: "-40%" }
             ]
         }
     },
     {
-        id: "logi_flow",
-        title: "LogiFlow AI",
-        industry: "Logistics",
-        shortDesc: "Predictive supply chain optimization for global shipping firms.",
-        description: "An AI-driven logistics engine that optimizes global shipping routes in real-time. It processes millions of data points, including weather, port congestion, and fuel prices, to ensure maximum efficiency.",
-        tech: ["React", "Node.js", "PostgreSQL", "Graph Neural Networks"],
-        color: "linear-gradient(135deg, #111827, #374151)",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+        id: "content_writing_pro",
+        title: "ContentFlow Writing",
+        industry: "Content Writing",
+        shortDesc: "High-volume SEO content production for a legal services platform.",
+        description: "Delivered a scalable content writing operation for a legal tech company, producing 80+ optimized articles per month targeting high-intent legal queries across 12 practice areas.",
+        tech: ["Surfer SEO", "Clearscope", "Google NLP API", "WordPress"],
+        color: "linear-gradient(135deg, #b45309, #f59e0b)",
+        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "A global shipping leader was struggling with inefficient routing, with 15% of their container capacity remaining unutilized or traveling redundant paths due to static scheduling.",
-            solution: "We developed a Graph Neural Network (GNN) that treats the global shipping network as a dynamic system. It suggests real-time re-routing and load balancing based on predictive demand spikes.",
-            impact: "Successfully optimized over 500 global routes, saving $4.5M in annual fuel costs and increasing container utilization by 18%.",
+            problem: "A legal services platform needed to compete with established law firm blogs but had no content team and a backlog of 500+ untouched keyword opportunities.",
+            identifiedProblem: "Previous freelance writers produced generic content that failed E-E-A-T standards. Articles lacked legal citations, expert quotes, and the semantic depth required to rank in a YMYL niche.",
+            solution: "We built a specialized writing pipeline with legal-domain writers, an SEO editor layer, and a structured brief template ensuring every article met Google's E-E-A-T requirements before publication.",
+            impact: "Published 960 articles over 12 months. Organic impressions grew from 40K to 1.2M monthly. 180 articles rank on page one for high-intent legal queries.",
             metrics: [
-                { label: "Fuel Saved", value: "$4.5M" },
-                { label: "Utilization", value: "+18%" },
-                { label: "CO2 Reduced", value: "22%" }
+                { label: "Monthly Impressions", value: "1.2M" },
+                { label: "Page 1 Articles", value: "180" },
+                { label: "Articles Delivered", value: "960" }
             ]
         }
     },
     {
-        id: "med_safe",
-        title: "MedSafe Hub",
-        industry: "Healthcare",
-        shortDesc: "Zero-trust medical record storage with encrypted sharing.",
-        description: "A secure, decentralized platform for medical professionals to share patient data without compromising privacy. Built on a zero-trust architecture to meet the most stringent global compliance standards.",
-        tech: ["AWS", "Solidity", "Next.js", "ZKP"],
-        color: "linear-gradient(135deg, #4c1d95, #8b5cf6)",
-        image: "/projects/healthcare.png",
+        id: "content_marketing_strategy",
+        title: "AuthorityBuild Content",
+        industry: "Content Marketing",
+        shortDesc: "Full-funnel content strategy that turned a B2B brand into an industry authority.",
+        description: "Designed and executed a 12-month content marketing roadmap for a B2B cybersecurity firm, combining thought leadership, lead magnets, and distribution to build measurable pipeline.",
+        tech: ["HubSpot", "Semrush", "Canva Pro", "Mailchimp"],
+        color: "linear-gradient(135deg, #be123c, #f43f5e)",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "Hospitals were facing critical security vulnerabilities during patient data transfers, leading to HIPAA compliance risks and delayed treatments due to slow verification processes.",
-            solution: "Implemented Zero-Knowledge Proof (ZKP) infrastructure on a private blockchain. This allows data verification without revealing sensitive patient information, ensuring 100% privacy.",
-            impact: "Achieved zero data breaches over 18 months of operation. Data transfer speeds between partner hospitals increased by 95%, significantly improving emergency care response times.",
+            problem: "A B2B cybersecurity firm had deep technical expertise but zero content presence. Their sales team relied entirely on cold outreach with a 1.2% response rate.",
+            identifiedProblem: "Prospects had no way to discover or trust the brand before a sales call. Without content, every deal started from zero credibility, extending sales cycles to 6+ months.",
+            solution: "We built a full-funnel content engine: weekly thought leadership articles, monthly whitepapers as lead magnets, a LinkedIn newsletter, and a nurture email sequence for MQL conversion.",
+            impact: "Inbound leads increased by 240% in 12 months. Average sales cycle shortened from 6 months to 3.5 months. The LinkedIn newsletter reached 8,000 subscribers organically.",
             metrics: [
-                { label: "Breaches", value: "Zero" },
-                { label: "Transfer Speed", value: "+95%" },
-                { label: "Compliant", value: "100%" }
+                { label: "Inbound Leads", value: "+240%" },
+                { label: "Sales Cycle", value: "-42%" },
+                { label: "Newsletter Subs", value: "8,000" }
             ]
         }
     },
     {
-        id: "secure_fin",
-        title: "SecureFin Cloud",
-        industry: "Cloud",
-        shortDesc: "Zero-trust architecture for Tier 1 banking client.",
-        description: "A massive migration and security overhaul for a national bank. We implemented a multi-cloud strategy with automated data sovereignty checks and real-time threat detection.",
-        tech: ["Terraform", "Kubernetes", "Azure AD", "Sentinel"],
-        color: "linear-gradient(135deg, #0f172a, #1e293b)",
-        image: "/projects/cloud.png",
+        id: "digital_marketing_campaign",
+        title: "PeakReach Digital",
+        industry: "Digital Marketing",
+        shortDesc: "Multi-channel paid and organic campaign delivering 8x ROAS for a DTC brand.",
+        description: "A fully integrated digital marketing campaign for a direct-to-consumer wellness brand, combining Google Ads, Meta, email marketing, and SEO into a unified growth engine.",
+        tech: ["Google Ads", "Meta Ads Manager", "Klaviyo", "GA4"],
+        color: "linear-gradient(135deg, #0369a1, #38bdf8)",
+        image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "The client's local infrastructure was failing under peak loads, and their security perimeter was outdated, leaving them vulnerable to ransomware and data leaks.",
-            solution: "Architected a hybrid cloud environment with automated scaling. We implemented a 'Perimeterless' security model using identity-based access controls and AI-monitored log analytics.",
-            impact: "Zero downtime during peak seasonal traffic. Security audit scores improved by 40%, and operational costs were reduced by 30% through automation.",
+            problem: "A DTC wellness brand was spending $50K/month on ads with a 2.1x ROAS — barely breaking even. They had no email strategy and their organic presence was non-existent.",
+            identifiedProblem: "Ad account audit revealed massive budget waste on broad match keywords and no retargeting funnel. 80% of ad spend was going to cold audiences with no nurture path.",
+            solution: "Restructured the ad account with tightly themed ad groups, built a 5-step email welcome and abandonment flow, and launched an SEO content plan targeting bottom-of-funnel buyer queries.",
+            impact: "ROAS improved from 2.1x to 8x within 90 days. Email now contributes 35% of total revenue. Organic traffic grew 180% in 6 months, reducing reliance on paid channels.",
             metrics: [
-                { label: "Uptime", value: "99.99%" },
-                { label: "Cost Savings", value: "30%" },
-                { label: "Audit Score", value: "+40%" }
+                { label: "ROAS", value: "8x" },
+                { label: "Email Revenue", value: "35%" },
+                { label: "Organic Growth", value: "+180%" }
             ]
         }
     },
     {
-        id: "streamline_crm",
-        title: "StreamlineCRM",
-        industry: "Fintech",
-        shortDesc: "Enterprise lead-to-revenue automation system.",
-        description: "A custom-built CRM solution for high-volume sales teams, integrating AI-driven lead scoring and automated follow-up sequences.",
-        tech: ["React", "Node.js", "Redis", "OpenAI API"],
-        color: "linear-gradient(135deg, #10b981, #059669)",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+        id: "web_design_dev",
+        title: "ConvertCraft Design",
+        industry: "Design & Development",
+        shortDesc: "Conversion-focused redesign that boosted leads by 190% for a SaaS startup.",
+        description: "A full UX audit and redesign of a SaaS product's marketing site, focused on reducing friction, improving messaging clarity, and building a design system for long-term scalability.",
+        tech: ["Figma", "React", "Tailwind CSS", "Framer Motion"],
+        color: "linear-gradient(135deg, #065f46, #10b981)",
+        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200",
         caseStudy: {
-            problem: "Sales teams were losing 40% of leads due to slow response times and manual data entry errors in their legacy CRM.",
-            identifiedProblem: "Audit revealed that lead distribution was bottlenecked by a manual approval process, and 70% of rep time was spent on administrative tasks rather than selling.",
-            solution: "Developed an automated scoring engine that routes leads in real-time. Integrated a GPT-4 powered assistant to draft personalized initial responses based on lead behavior.",
-            impact: "Lead response time dropped from 4 hours to 90 seconds. Conversion rates increased by 35% within the first two months.",
+            problem: "A SaaS startup had strong product reviews but a 1.8% website conversion rate. Visitors were landing and leaving without signing up for the free trial.",
+            identifiedProblem: "Heatmap and session recording analysis showed users were confused by the value proposition within the first 5 seconds. The CTA hierarchy was unclear and the pricing page had a 78% exit rate.",
+            solution: "Redesigned the entire site with a message-first approach: clear hero headline, social proof above the fold, and a simplified pricing page. Built a reusable component library for the dev team.",
+            impact: "Conversion rate increased from 1.8% to 5.2% — a 190% improvement. Bounce rate dropped by 35%. The new design system reduced future dev time by 60%.",
             metrics: [
-                { label: "Response Time", value: "-98%" },
-                { label: "Conversion", value: "+35%" },
-                { label: "Admin Work", value: "-70%" }
-            ]
-        }
-    },
-    {
-        id: "nexus_pos",
-        title: "NexusPOS",
-        industry: "Retail",
-        shortDesc: "Next-gen point of sale for multi-location scaling.",
-        description: "A cloud-native POS system designed for franchises, offering real-time inventory syncing and unified customer loyalty programs across 500+ locations.",
-        tech: ["TypeScript", "GraphQL", "AWS Lambda", "MongoDB"],
-        color: "linear-gradient(135deg, #f59e0b, #d97706)",
-        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800",
-        caseStudy: {
-            problem: "A rapidly growing retail chain faced 15% inventory discrepancy rates because their store-level systems didn't sync with the central warehouse in real-time.",
-            identifiedProblem: "The legacy polling architecture caused race conditions during high-volume sales events (like Black Friday), leading to overselling and customer dissatisfaction.",
-            solution: "Implemented an event-driven architecture using AWS AppSync and Lambda. Every transaction triggers an immediate, global inventory update via high-concurrency message queues.",
-            impact: "Reduced inventory errors to <0.1%. The system handled 1.2M transactions in a single day during peak season without a single second of downtime.",
-            metrics: [
-                { label: "Inv. Accuracy", value: "99.9%" },
-                { label: "Scale", value: "1.2M txn/day" },
-                { label: "Sync Latency", value: "< 200ms" }
+                { label: "Conversion Rate", value: "+190%" },
+                { label: "Bounce Rate", value: "-35%" },
+                { label: "Dev Velocity", value: "+60%" }
             ]
         }
     },

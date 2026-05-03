@@ -11,6 +11,7 @@ const Contact = () => {
         subject: '',
         message: ''
     })
+    const [submittedEmail, setSubmittedEmail] = useState('')
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -51,6 +52,7 @@ const Contact = () => {
 
             const result = await response.json()
             if (result.success) {
+                setSubmittedEmail(formData.email)
                 setStatus('success')
                 setFormData({ name: '', email: '', subject: '', message: '' })
             } else {
@@ -114,7 +116,7 @@ const Contact = () => {
                         <div style={{ textAlign: 'center', padding: '2rem' }}>
                             <CheckCircle size={64} color="hsl(var(--sc))" style={{ marginBottom: '2rem' }} />
                             <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Message Sent!</h2>
-                            <p style={{ opacity: 0.6, marginBottom: '2rem' }}>Thank you for reaching out. We'll get back to you at mavanimeet71@gmail.com shortly.</p>
+                            <p style={{ opacity: 0.6, marginBottom: '2rem' }}>Thank you for reaching out. We'll get back to you at <strong style={{ color: 'white' }}>{submittedEmail}</strong> shortly.</p>
                             <button onClick={() => setStatus('idle')} className="btn btn-secondary">Send another</button>
                         </div>
                     ) : (

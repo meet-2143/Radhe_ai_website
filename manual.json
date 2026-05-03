@@ -1,0 +1,107 @@
+{
+  "nodes": [
+    {
+      "id": "manual_trigger",
+      "name": "When clicking Execute workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "id": "set_product_types",
+      "name": "Set Product Types",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [200, 0],
+      "parameters": {
+        "values": {
+          "json": [
+            {
+              "name": "productTypes",
+              "value": "[\"FROZEN2\",\"FROZEN3\",\"FROZEN4\",\"FROZEN5\",\"FROZEN6\"]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "split_batches",
+      "name": "Loop Product Types",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [400, 0],
+      "parameters": {
+        "batchSize": 1
+      }
+    },
+    {
+      "id": "google_sheets",
+      "name": "Get row(s) in sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [650, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "QCBkD6hyFy9Dbn3X",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1FRFIE2Lduhf8jvUheto65dwkdwedKu0FOT-DrgvAwHQ",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 784261537,
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "productType",
+              "lookupValue": "={{ $json.productType }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "js_filter",
+      "name": "Filter Updated Products",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 0],
+      "parameters": {
+        "jsCode": "// Already updated product titles\nconst alreadyUpdated = [\n  \"DAIRY CLUB-KAJU ANJEER ICE CREAM-960ML\",\n  \"RANGOLI-SHRIKHAND KESAR PISTA-350GM\",\n  \"VADILAL-MEETHA PAAN ICE CREAM-100ML\"\n  // ... KEEP YOUR FULL LIST HERE (UNCHANGED)\n];\n\nconst cleanList = alreadyUpdated.map(t => t.trim().toUpperCase());\n\nreturn items.filter(item => {\n  const sheetTitle = (item.json.title || \"\")\n    .toString()\n    .trim()\n    .toUpperCase();\n\n  return !cleanList.includes(sheetTitle);\n});"
+      }
+    }
+  ],
+  "connections": {
+    "When clicking Execute workflow": {
+      "main": [[{ "node": "Set Product Types", "type": "main", "index": 0 }]]
+    },
+    "Set Product Types": {
+      "main": [[{ "node": "Loop Product Types", "type": "main", "index": 0 }]]
+    },
+    "Loop Product Types": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [[{ "node": "Filter Updated Products", "type": "main", "index": 0 }]]
+    },
+    "Filter Updated Products": {
+      "main": [[{ "node": "Loop Product Types", "type": "main", "index": 1 }]]
+    }
+  }
+}
