@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ArrowLeft, CheckCircle, Target, TrendingUp, Cpu } from 'lucide-react'
 import { projects } from '../data/projects'
+import { getServiceById } from '../data/servicesData'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -54,11 +55,11 @@ const ProjectDetail = () => {
             {/* Header / Hero */}
             <section style={{ padding: '0 5% 80px' }}>
                 <Link to="/portfolio" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--pc))', textDecoration: 'none', marginBottom: '3rem', fontWeight: 'bold' }}>
-                    <ArrowLeft size={20} /> BACK TO PORTFOLIO
+                    <ArrowLeft size={20} /> BACK TO OUR WORK
                 </Link>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 500px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
                     <div>
-                        <div className="reveal" style={{ fontSize: '0.9rem', color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1rem' }}>{project.industry.toUpperCase()}</div>
+                        <div className="reveal" style={{ fontSize: '0.9rem', color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1rem' }}>{project.category.toUpperCase()} · {project.clientType.toUpperCase()} · EXAMPLE PROJECT</div>
                         <h1 className="reveal" style={{ fontSize: 'clamp(3rem, 5vw, 6rem)', marginBottom: '2rem', lineHeight: '1' }}>{project.title}</h1>
                         <p className="reveal" style={{ fontSize: '1.2rem', opacity: 0.7, marginBottom: '2.5rem', maxWidth: '500px' }}>{project.shortDesc}</p>
                         <div className="reveal" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -76,14 +77,22 @@ const ProjectDetail = () => {
             {/* Case Study Preview (The Impact Summary) */}
             <section style={{ background: 'hsla(var(--pc) / 0.05)', padding: '100px 5%' }}>
                 <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
-                    <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '2rem' }}>[ 01 ] CASE STUDY PREVIEW</h2>
-                    <h3 className="reveal" style={{ fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', marginBottom: '3rem' }}>How we delivered <span className="gradient-text">exceptional value</span> to {project.title}.</h3>
-                    <div className="metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-                        {project.caseStudy.metrics.map((m, i) => (
-                            <div key={i} className="metric-card glass-card" style={{ padding: '2.5rem' }}>
-                                <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'hsl(var(--pc))', marginBottom: '0.5rem' }}>{m.value}</div>
-                                <div style={{ fontSize: '0.8rem', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{m.label}</div>
+                    <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '2rem' }}>[ 01 ] WHAT WE DELIVER</h2>
+                    <h3 className="reveal" style={{ fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', marginBottom: '3rem' }}>The typical scope of a <span className="gradient-text">{project.title}</span> project.</h3>
+                    <div className="metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
+                        {project.caseStudy.deliverables.map((d, i) => (
+                            <div key={i} className="metric-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                                <CheckCircle size={28} color="hsl(var(--pc))" />
+                                <div style={{ fontSize: '0.95rem', fontWeight: '600', lineHeight: '1.4' }}>{d}</div>
                             </div>
+                        ))}
+                    </div>
+                    <div className="reveal" style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '3rem' }}>
+                        <span style={{ fontSize: '0.75rem', opacity: 0.5, alignSelf: 'center', letterSpacing: '0.08em' }}>SERVICES INVOLVED:</span>
+                        {project.services.map(getServiceById).filter(Boolean).map(svc => (
+                            <Link key={svc.id} to={`/services/${svc.id}`} className="glass-card" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', borderRadius: '100px', textDecoration: 'none', color: 'white' }}>
+                                {svc.navTitle}
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -128,7 +137,7 @@ const ProjectDetail = () => {
                         <div className="reveal">
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
                                 <TrendingUp color="hsl(var(--sc))" size={32} />
-                                <h4 style={{ fontSize: '1.5rem' }}>{project.caseStudy.identifiedProblem ? '04.' : '03.'} THE SUCCESS</h4>
+                                <h4 style={{ fontSize: '1.5rem' }}>{project.caseStudy.identifiedProblem ? '04.' : '03.'} THE OUTCOME</h4>
                             </div>
                             <p style={{ opacity: 0.6, fontSize: '1.1rem', lineHeight: '1.8' }}>{project.caseStudy.impact}</p>
                         </div>
@@ -138,7 +147,7 @@ const ProjectDetail = () => {
                     <div className="reveal glass-card" style={{ marginTop: '6rem', padding: '4rem', background: 'hsl(var(--card))' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                             <Cpu color="hsl(var(--pc))" size={32} />
-                            <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)' }}>CORE TECHNOLOGY STACK</h4>
+                            <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)' }}>PLATFORMS & TOOLS</h4>
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.5rem' }}>
                             {project.tech.map((t, i) => (
@@ -153,8 +162,8 @@ const ProjectDetail = () => {
 
             {/* CTA */}
             <section style={{ textAlign: 'center', paddingBottom: '160px' }}>
-                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '2rem' }}>Want results like <span className="gradient-text">these?</span></h3>
-                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>LET'S BUILD YOUR PROJECT</Link>
+                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '2rem' }}>Need something <span className="gradient-text">similar?</span></h3>
+                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>GET A FREE QUOTE</Link>
             </section>
         </main>
     )

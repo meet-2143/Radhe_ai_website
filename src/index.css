@@ -394,6 +394,54 @@ nav {
   margin: 0;
 }
 
+/* Services mega-menu: anchored to the centred nav pill, not the trigger */
+.nav-container {
+  position: relative;
+}
+
+.nav-item-dropdown.has-mega {
+  position: static;
+}
+
+.dropdown-menu.mega-menu {
+  width: min(960px, 94vw);
+  max-height: 75vh;
+  padding: 1.25rem;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem 0.5rem;
+}
+
+.mega-menu .dropdown-item {
+  align-items: flex-start;
+  margin-bottom: 0;
+  opacity: 1;
+  white-space: normal;
+}
+
+.mega-menu .dropdown-item:hover {
+  transform: none;
+}
+
+.mega-menu-footer {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  font-size: 0.75rem !important;
+  opacity: 0.6;
+}
+
+@media (max-width: 1100px) {
+  .mega-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1.5rem;

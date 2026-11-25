@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import { Users, Target, Rocket, Award, TrendingUp, Search, BarChart2, Globe } from 'lucide-react'
+import { Users, Target, Rocket, Award, Layers, LifeBuoy, ShieldCheck } from 'lucide-react'
+import { itServices } from '../data/servicesData'
+import { industries } from '../data/industriesData'
+
+const totalSubServices = itServices.reduce((sum, s) => sum + s.subServices.length, 0)
 
 const About = () => {
     const containerRef = useRef(null)
@@ -25,9 +29,9 @@ const About = () => {
             <section className="hero" style={{ minHeight: '80vh' }}>
                 <h1 className="reveal" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}>OUR <span className="gradient-text">STORY</span></h1>
                 <p className="reveal hero-p" style={{ maxWidth: '800px', fontSize: 'clamp(1rem, 4vw, 1.2rem)' }}>
-                    Radhe AI started as a small SEO consultancy with one goal: help great businesses
-                    get found online. Today we're a full-service digital marketing agency driving
-                    measurable organic growth, content authority, and search dominance for brands worldwide.
+                    Working closely with small business owners showed us how much time they lose to technology
+                    that doesn't work. Radhe AI exists to fix that: we're a complete IT services partner for
+                    small businesses and eCommerce.
                 </p>
             </section>
 
@@ -38,18 +42,18 @@ const About = () => {
                         <Target size={32} color="hsl(var(--pc))" />
                         <h3 style={{ marginTop: '1.5rem' }}>Our Mission</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
-                            To help businesses of every size compete and win in search  through
-                            data-driven SEO, compelling content, and performance marketing that
-                            delivers real, lasting results.
+                            To give small businesses and online retailers dependable, affordable technology,
+                            with support, security, and systems that let owners focus on customers
+                            instead of computers.
                         </p>
                     </div>
                     <div className="bento-item large">
                         <Rocket size={32} color="hsl(var(--sc))" />
                         <h3 style={{ marginTop: '1.5rem' }}>Our Vision</h3>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
-                            A digital landscape where every brand has the visibility it deserves 
-                            powered by intelligent SEO, authoritative content, and AI-driven
-                            marketing strategies.
+                            A future where every small business has the same quality of IT as a large
+                            enterprise: secure, connected, automated, and supported by people who
+                            understand how the business runs.
                         </p>
                     </div>
                 </div>
@@ -61,19 +65,19 @@ const About = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
                     {[
                         {
-                            icon: <Search size={28} color="hsl(var(--pc))" />,
-                            title: 'SEO-First Thinking',
-                            desc: 'Every strategy starts with search intent. We build content and campaigns around what your audience is actually looking for.'
+                            icon: <Layers size={28} color="hsl(var(--pc))" />,
+                            title: 'Everything Under One Roof',
+                            desc: 'From the front-counter POS to the cloud, websites, security, and automation, one team looks after your whole setup.'
                         },
                         {
-                            icon: <BarChart2 size={28} color="hsl(var(--sc))" />,
-                            title: 'Results You Can Measure',
-                            desc: 'No vanity metrics. We track rankings, organic traffic, leads, and revenue  and we report on all of it transparently.'
+                            icon: <LifeBuoy size={28} color="hsl(var(--sc))" />,
+                            title: 'Support That Shows Up',
+                            desc: 'Remote help for quick fixes and on-site visits when needed, with monthly packages that make costs predictable.'
                         },
                         {
-                            icon: <Globe size={28} color="hsl(var(--pc))" />,
-                            title: 'Full-Funnel Coverage',
-                            desc: 'From awareness to conversion, we cover SEO, content, paid media, and design  so nothing falls through the cracks.'
+                            icon: <ShieldCheck size={28} color="hsl(var(--pc))" />,
+                            title: 'Secure by Default',
+                            desc: 'MFA, endpoint protection, email security, and monitored backups are built into how we set things up.'
                         }
                     ].map((item, idx) => (
                         <div key={idx} className="reveal">
@@ -90,11 +94,9 @@ const About = () => {
                 <h2 style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '3rem' }}>[ 04 ] MILESTONES</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
                     {[
-                        { year: '2021', text: 'Radhe AI founded as a boutique SEO consultancy.' },
-                        { year: '2022', text: 'Expanded into content marketing and paid media, growing to 30+ clients.' },
-                        { year: '2023', text: 'Launched our On-Demand SEO & Content service  500+ articles delivered.' },
-                        { year: '2024', text: 'Recognized as a top digital marketing agency, serving clients across 12 industries.' },
-                        { year: '2025', text: 'Introduced AI-powered AEO services to future-proof client visibility in LLM search.' }
+                        { year: '2021', text: 'Radhe AI founded.' },
+                        { year: '2025', text: 'Introduced AI-powered services for our clients.' },
+                        { year: '2026', text: 'Launched complete IT services for small businesses and eCommerce.' }
                     ].map((m, i) => (
                         <div key={i} className="reveal" style={{
                             display: 'grid',
@@ -115,9 +117,9 @@ const About = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2rem', textAlign: 'center' }}>
                     {[
                         { value: '50+', label: 'Clients Served' },
-                        { value: '1,200+', label: 'Content Pieces Delivered' },
-                        { value: '3x', label: 'Avg. Organic Traffic Growth' },
-                        { value: '12', label: 'Industries Covered' }
+                        { value: String(itServices.length), label: 'Service Areas' },
+                        { value: `${totalSubServices}+`, label: 'IT Services Offered' },
+                        { value: String(industries.length), label: 'Industries Covered' }
                     ].map((stat, i) => (
                         <div key={i} className="reveal glass-card" style={{ padding: '2.5rem 1.5rem' }}>
                             <div style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', fontWeight: '900', color: i % 2 === 0 ? 'hsl(var(--pc))' : 'hsl(var(--sc))' }}>{stat.value}</div>
@@ -133,26 +135,26 @@ const About = () => {
                 <div className="bento-grid">
                     <div className="bento-item large reveal">
                         <div style={{ position: 'absolute', top: '2rem', right: '2rem' }}><Users size={32} color="hsl(var(--pc))" /></div>
-                        <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '1rem' }}>Parth Mavani</h3>
-                        <p style={{ color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1.5rem', letterSpacing: '0.1em', fontSize: '0.9rem' }}>FOUNDER & CEO</p>
+                        <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '1rem' }}>Founder & CEO</h3>
+                        <p style={{ color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1.5rem', letterSpacing: '0.1em', fontSize: '0.9rem' }}>STRATEGY & GROWTH</p>
                         <p style={{ opacity: 0.6, maxWidth: '500px', lineHeight: '1.7', fontSize: '1rem' }}>
-                            A digital marketing strategist with a deep background in SEO and content
-                            growth. Parth founded Radhe AI to give ambitious brands access to
-                            enterprise-level search strategy  without the enterprise price tag.
+                            Our founder started Radhe AI to give small businesses access to the kind of
+                            technology and support usually reserved for large companies, without
+                            the enterprise price tag.
                         </p>
                     </div>
                     <div className="bento-item wide reveal">
-                        <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Meet Mavani</h3>
-                        <p style={{ color: 'hsl(var(--sc))', fontWeight: 'bold' }}>CO-FOUNDER & HEAD OF GROWTH</p>
+                        <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Co-Founder</h3>
+                        <p style={{ color: 'hsl(var(--sc))', fontWeight: 'bold' }}>DELIVERY & OPERATIONS</p>
                         <p style={{ opacity: 0.6, marginTop: '1rem' }}>
-                            Specializing in performance marketing, analytics, and AI-driven content
-                            strategy, Meet leads growth operations  ensuring every campaign is
-                            optimized for measurable ROI and long-term organic authority.
+                            Our co-founder leads delivery and operations, making sure every project, from
+                            websites and automation to support plans, is delivered on time and
+                            keeps working long after launch.
                         </p>
                     </div>
                     <div className="bento-item reveal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center' }}>
                         <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'hsl(var(--pc))' }}>4+</div>
-                        <div style={{ fontSize: '0.8rem', opacity: 0.5 }}>YEARS IN SEO</div>
+                        <div style={{ fontSize: '0.8rem', opacity: 0.5 }}>YEARS IN BUSINESS</div>
                     </div>
                     <div className="bento-item reveal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center' }}>
                         <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'hsl(var(--sc))' }}>50+</div>
@@ -163,15 +165,15 @@ const About = () => {
 
             {/* Partners & Certifications */}
             <section id="partners" style={{ background: 'hsla(var(--pc) / 0.05)' }}>
-                <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '3rem' }}>[ 07 ] TOOLS & CERTIFICATIONS</h2>
+                <h2 className="reveal" style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '3rem' }}>[ 07 ] PLATFORMS WE SUPPORT</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '2rem', alignItems: 'center', textAlign: 'center' }}>
                     {[
-                        'Google Partner',
-                        'Semrush Certified',
-                        'HubSpot Certified',
-                        'Ahrefs Pro',
-                        'GA4 Certified',
-                        'Meta Business Partner'
+                        'Microsoft 365',
+                        'Google Workspace',
+                        'Shopify',
+                        'WooCommerce',
+                        'Xero & MYOB',
+                        'Make.com & Zapier'
                     ].map((partner, i) => (
                         <div key={i} className="reveal glass-card" style={{ padding: '2rem', opacity: 0.7 }}>
                             <Award size={32} color="hsl(var(--pc))" style={{ marginBottom: '1rem' }} />
