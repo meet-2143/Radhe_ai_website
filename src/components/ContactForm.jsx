@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Send, Loader2, CheckCircle } from 'lucide-react'
 import { itServices } from '../data/servicesData'
 
-const WEB3FORMS_ACCESS_KEY = '7ca39139-e9f4-4f22-bc8e-3c051763c7fe'
+// Set in .env (see .env.example). Vite only exposes variables prefixed with VITE_.
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
 const NOT_SURE = 'Not sure, need a recommendation'
 
 const inputStyle = {
@@ -28,6 +29,11 @@ const ContactForm = ({ source = 'Website Inquiry', defaultService = '', submitLa
 
     const handleSubmit = async e => {
         e.preventDefault()
+        if (!WEB3FORMS_ACCESS_KEY) {
+            console.error('VITE_WEB3FORMS_ACCESS_KEY is not set. Add it to .env and restart the dev server.')
+            setStatus('error')
+            return
+        }
         setStatus('loading')
         try {
             const res = await fetch('https://api.web3forms.com/submit', {
