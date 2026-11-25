@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Send, Loader2, CheckCircle } from 'lucide-react'
 import { itServices } from '../data/servicesData'
 
-// Set in .env (see .env.example). Vite only exposes variables prefixed with VITE_.
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+// Set in .env (see .env.example). The WEB3FORMS_ prefix is allowed in vite.config.js (envPrefix).
+const WEB3FORMS_ACCESS_KEY = import.meta.env.WEB3FORMS_ACCESS_KEY
 const NOT_SURE = 'Not sure, need a recommendation'
 
 const inputStyle = {
@@ -30,7 +30,7 @@ const ContactForm = ({ source = 'Website Inquiry', defaultService = '', submitLa
     const handleSubmit = async e => {
         e.preventDefault()
         if (!WEB3FORMS_ACCESS_KEY) {
-            console.error('VITE_WEB3FORMS_ACCESS_KEY is not set. Add it to .env and restart the dev server.')
+            console.error('WEB3FORMS_ACCESS_KEY is not set. Add it to .env and restart the dev server.')
             setStatus('error')
             return
         }
