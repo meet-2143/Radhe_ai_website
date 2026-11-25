@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useSmoothScroll, getLenis } from './hooks/useSmoothScroll'
 import { Menu, X, ChevronDown, MessageCircle, Mail } from 'lucide-react'
 import { itServices, getServiceById, legacyServiceRedirects } from './data/servicesData'
+import { CONTACT_EMAIL } from './data/siteConfig'
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'))
@@ -32,8 +33,9 @@ const ScrollToTop = () => {
 const Navbar = ({ onToggle, isOpen }) => (
     <nav>
         <div className="nav-container shadow-pill">
-            <Link to="/" style={{ fontSize: '1.1rem', fontWeight: '900', textDecoration: 'none', color: 'white', letterSpacing: '-0.02em' }}>
-                RADHE<span className="gradient-text">AI</span>
+            <Link to="/" aria-label="Maharshi Technologies home" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1, textDecoration: 'none', color: 'white', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: '900', letterSpacing: '-0.02em' }}>MAHARSHI</span>
+                <span className="gradient-text" style={{ fontSize: '0.55rem', fontWeight: '700', letterSpacing: '0.32em', marginTop: '0.2rem' }}>TECHNOLOGIES</span>
             </Link>
 
             <div className="nav-links">
@@ -111,7 +113,7 @@ const Footer = () => (
         <div style={{ padding: '0 5% 80px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '3rem' }}>
             <div style={{ gridColumn: 'span 2' }}>
                 <Link to="/" style={{ fontSize: '1.5rem', fontWeight: '800', textDecoration: 'none', color: 'white' }}>
-                    RADHE<span className="gradient-text">AI</span>
+                    MAHARSHI <span className="gradient-text">TECHNOLOGIES</span>
                 </Link>
                 <p style={{ marginTop: '1.5rem', opacity: 0.6, maxWidth: '320px', lineHeight: '1.6', fontSize: '0.9rem' }}>
                     Complete IT services for small businesses and eCommerce: support, websites, online stores, cloud, cybersecurity, POS, automation and more.
@@ -152,7 +154,7 @@ const Footer = () => (
             <div>
                 <h4 style={footerHeadingStyle}>Contact</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.85rem', opacity: 0.6 }}>
-                    <a href="mailto:contact@radhe-ai.com" style={{ color: 'inherit', textDecoration: 'none' }}>contact@radhe-ai.com</a>
+                    <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: 'inherit', textDecoration: 'none' }}>{CONTACT_EMAIL}</a>
                 </div>
                 <Link to="/contact" className="btn btn-secondary" style={{ marginTop: '1.5rem', fontSize: '0.8rem', padding: '0.7rem 1.25rem', display: 'inline-flex', gap: '0.5rem' }}>
                     <MessageCircle size={16} /> Send an Enquiry
@@ -161,7 +163,7 @@ const Footer = () => (
         </div>
 
         <div style={{ padding: '2rem 5%', borderTop: '1px solid hsla(0,0%,100%,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', opacity: 0.4, flexWrap: 'wrap', gap: '1rem' }}>
-            <p>© 2026 Radhe AI. All rights reserved.</p>
+            <p>© 2026 Maharshi Technologies. All rights reserved.</p>
             <div style={{ display: 'flex', gap: '2rem' }}>
                 <span>Privacy Policy</span>
                 <span>Terms of Service</span>
@@ -180,7 +182,7 @@ const LegacyServiceRedirect = () => {
 // Sticky conversion CTAs
 const StickyCTAs = () => (
     <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', zIndex: 999 }}>
-        <a href="mailto:contact@radhe-ai.com"
+        <a href={`mailto:${CONTACT_EMAIL}`}
             title="Email Us"
             style={{ width: '52px', height: '52px', borderRadius: '50%', background: 'linear-gradient(135deg, hsl(var(--pc)), hsl(var(--sc)))', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px hsla(var(--pc)/0.4)', transition: 'transform 0.2s ease', textDecoration: 'none' }}
             onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
@@ -213,7 +215,7 @@ const App = () => {
             <ScrollToTop />
             <div className="preloader">
                 <div style={{ overflow: 'hidden' }}>
-                    <h2 className="preloader-text">RADHE AI</h2>
+                    <h2 className="preloader-text">MAHARSHI TECHNOLOGIES</h2>
                 </div>
             </div>
             <div ref={cursorRef} className="custom-cursor" />

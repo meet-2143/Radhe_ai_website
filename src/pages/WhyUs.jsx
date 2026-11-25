@@ -55,7 +55,7 @@ const WhyUs = () => {
     return (
         <main ref={containerRef}>
             <section className="hero" style={{ minHeight: '70vh' }}>
-                <p className="reveal" style={{ fontSize: '0.85rem', color: 'hsl(var(--pc))', letterSpacing: '0.15em', marginBottom: '1rem' }}>WHY RADHE AI</p>
+                <p className="reveal" style={{ fontSize: '0.85rem', color: 'hsl(var(--pc))', letterSpacing: '0.15em', marginBottom: '1rem' }}>WHY MAHARSHI TECHNOLOGIES</p>
                 <h1 className="reveal" style={{ fontSize: 'clamp(2.5rem, 9vw, 7rem)' }}>
                     WHY BUSINESSES <br /><span className="gradient-text">CHOOSE US</span>
                 </h1>
@@ -92,7 +92,7 @@ const WhyUs = () => {
                         <thead>
                             <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
                                 <th style={{ padding: '1rem 1.5rem', textAlign: 'left', opacity: 0.5, fontSize: '0.75rem', letterSpacing: '0.08em' }}>ASPECT</th>
-                                <th style={{ padding: '1rem 1.5rem', textAlign: 'left', color: 'hsl(var(--pc))', fontSize: '0.75rem', letterSpacing: '0.08em' }}>RADHE AI</th>
+                                <th style={{ padding: '1rem 1.5rem', textAlign: 'left', color: 'hsl(var(--pc))', fontSize: '0.75rem', letterSpacing: '0.08em' }}>MAHARSHI TECHNOLOGIES</th>
                                 <th style={{ padding: '1rem 1.5rem', textAlign: 'left', opacity: 0.5, fontSize: '0.75rem', letterSpacing: '0.08em' }}>TYPICAL IT PROVIDER</th>
                             </tr>
                         </thead>

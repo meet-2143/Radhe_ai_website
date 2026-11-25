@@ -30,7 +30,7 @@ const About = () => {
                 <h1 className="reveal" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}>OUR <span className="gradient-text">STORY</span></h1>
                 <p className="reveal hero-p" style={{ maxWidth: '800px', fontSize: 'clamp(1rem, 4vw, 1.2rem)' }}>
                     Working closely with small business owners showed us how much time they lose to technology
-                    that doesn't work. Radhe AI exists to fix that: we're a complete IT services partner for
+                    that doesn't work. Maharshi Technologies exists to fix that: we're a complete IT services partner for
                     small businesses and eCommerce.
                 </p>
             </section>
@@ -94,7 +94,7 @@ const About = () => {
                 <h2 style={{ fontSize: '1rem', color: 'hsl(var(--pc))', marginBottom: '3rem' }}>[ 04 ] MILESTONES</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
                     {[
-                        { year: '2021', text: 'Radhe AI founded.' },
+                        { year: '2021', text: 'Maharshi Technologies founded.' },
                         { year: '2025', text: 'Introduced AI-powered services for our clients.' },
                         { year: '2026', text: 'Launched complete IT services for small businesses and eCommerce.' }
                     ].map((m, i) => (
@@ -138,7 +138,7 @@ const About = () => {
                         <h3 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '1rem' }}>Founder & CEO</h3>
                         <p style={{ color: 'hsl(var(--pc))', fontWeight: 'bold', marginBottom: '1.5rem', letterSpacing: '0.1em', fontSize: '0.9rem' }}>STRATEGY & GROWTH</p>
                         <p style={{ opacity: 0.6, maxWidth: '500px', lineHeight: '1.7', fontSize: '1rem' }}>
-                            Our founder started Radhe AI to give small businesses access to the kind of
+                            Our founder started Maharshi Technologies to give small businesses access to the kind of
                             technology and support usually reserved for large companies, without
                             the enterprise price tag.
                         </p>

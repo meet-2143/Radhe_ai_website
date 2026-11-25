@@ -2,9 +2,10 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { Mail } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
+import { CONTACT_EMAIL } from '../data/siteConfig'
 
 const contactItems = [
-    { icon: <Mail color="hsl(var(--pc))" />, label: 'EMAIL US', value: 'contact@radhe-ai.com', href: 'mailto:contact@radhe-ai.com' }
+    { icon: <Mail color="hsl(var(--pc))" />, label: 'EMAIL US', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` }
 ]
 
 const Contact = () => {

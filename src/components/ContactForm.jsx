@@ -41,7 +41,7 @@ const ContactForm = ({ source = 'Website Inquiry', defaultService = '', submitLa
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
                 body: JSON.stringify({
                     access_key: WEB3FORMS_ACCESS_KEY,
-                    from_name: `Radhe AI | ${source}`,
+                    from_name: `Maharshi Technologies | ${source}`,
                     subject: `IT enquiry: ${form.service || 'General'}`,
                     ...form
                 })

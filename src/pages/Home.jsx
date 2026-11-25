@@ -12,10 +12,10 @@ gsap.registerPlugin(ScrollTrigger)
 const totalSubServices = itServices.reduce((sum, s) => sum + s.subServices.length, 0)
 
 const testimonials = [
-    { name: 'Sheryl Erixson', role: 'Founder @ ProcessRun', industry: 'SaaS', text: 'Radhe AI played a pivotal role in developing our core infrastructure. They delivered exactly on time and provided incredible clarity for our daily operations, allowing us to scale without technical friction.', rating: 5 },
+    { name: 'Sheryl Erixson', role: 'Founder @ ProcessRun', industry: 'SaaS', text: 'Maharshi Technologies played a pivotal role in developing our core infrastructure. They delivered exactly on time and provided incredible clarity for our daily operations, allowing us to scale without technical friction.', rating: 5 },
     { name: 'Elvia', role: 'Chief Marketing Officer', industry: 'eCommerce', text: 'Their support in streamlining our business logic was exceptional. The team ensured every delivery milestone was met, giving us the operational confidence we needed to expand our market reach.', rating: 5 },
-    { name: 'Sanat Koshiya', role: 'Founder @ Apna Indian Bazaar', industry: 'Retail', text: 'Working with Radhe AI brought much-needed structure to our projects. Their ability to deliver complex features on time while maintaining transparent communication is what sets them apart.', rating: 5 },
-    { name: 'Anita Desai', role: 'Head of AI', industry: 'Healthcare', text: 'Security and privacy were our top concerns. Radhe AI exceeded all healthcare compliance standards with zero delays in implementation.', rating: 5 },
+    { name: 'Sanat Koshiya', role: 'Founder @ Apna Indian Bazaar', industry: 'Retail', text: 'Working with Maharshi Technologies brought much-needed structure to our projects. Their ability to deliver complex features on time while maintaining transparent communication is what sets them apart.', rating: 5 },
+    { name: 'Anita Desai', role: 'Head of AI', industry: 'Healthcare', text: 'Security and privacy were our top concerns. Maharshi Technologies exceeded all healthcare compliance standards with zero delays in implementation.', rating: 5 },
     { name: 'Michael Chen', role: 'VP Engineering', industry: 'FinTech', text: 'Professional, innovative, and incredibly fast. The predictive models they built saved us millions through operational optimization.', rating: 5 },
 ]
 
